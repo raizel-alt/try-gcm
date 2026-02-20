@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCM</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --dark-green: #2E8B57;
+    --medium-green: #1f5e46;
+    --light-green: #2f7d5c;
+    --soft-bg: #f3f7f5;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* --- PAGE TRANSITION CSS ADDED HERE --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--soft-bg);
+    color: var(--dark-green);
+    
+    /* Fade-in on load */
+    animation: fadeIn 0.5s ease-in-out;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* This class gets added by JavaScript when a link is clicked */
+body.fade-out {
+    opacity: 0;
+}
+/* -------------------------------------- */
+
+.top-nav {
+    background: var(--dark-green);
+    color: var(--white);
+    padding: 8px 8%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+header {
+    background: var(--white);
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.site-logo { max-height: 65px; }
+
+nav { display: flex; }
+
+.nav-item { margin-left: 35px; }
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-item a:hover {
+    color: var(--medium-green);
+}
+
+.hero {
+    height: 85vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1.5s ease-in-out;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 61, 46, 0.75);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+.btn-primary {
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: #2E8B57;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--medium-green);
+}
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+    <div>PH: +63 917 123 4567 | info@yourdomain.com</div>
+    <div>MON - FRI: 9:00 AM - 6:00 PM</div>
+</div>
+
+<header>
+    <img src="GCMLogo.png" alt="POWER MOMS SLPA Logo" class="site-logo">
+    <nav>
+        <div class="nav-item"><a href="index.html">Home</a></div>
+        <div class="nav-item"><a href="about.html">About Us</a></div>
+        <div class="nav-item"><a href="#">Services</a></div>
+        <div class="nav-item"><a href="#">Contact Us</a></div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Golden Century Marketing.</h1>
+        <p>A great country</p>
+        <a href="about.html" class="btn-primary">Learn More About Us</a>
+    </div>
+</section>
+
+<script>
+    /* PAGE TRANSITION LOGIC */
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll('a');
+        
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only animate if it's a real link to another page
+                if (href && href !== '#' && !href.startsWith('http')) {
+                    e.preventDefault(); // Stop immediate jump
+                    document.body.classList.add('fade-out'); // Start fade out
+                    
+                    // Wait for CSS transition (400ms) then change page
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 200); 
+                }
+            });
+        });
+    });
+
+    // Fix for browsers caching the "fade-out" state when using the back button
+    window.addEventListener('pageshow', function (event) {
+        if (event.persisted) {
+            document.body.classList.remove('fade-out');
+        }
+    });
+
+    /* IMAGE SLIDER LOGIC */
+    const sliderImages = [
+        'sample.jpg',
+        'sample2.jpg',
+        'sample3.jpg'
+    ];
+    
+    let currentIndex = 0;
+    const heroSection = document.querySelector('.hero');
+    
+    function changeBackgroundImage() {
+        if (sliderImages.length > 0) {
+            heroSection.style.backgroundImage = `url('${sliderImages[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % sliderImages.length;
+        }
+    }
+    
+    changeBackgroundImage();
+    setInterval(changeBackgroundImage, 4000);
+</script>
+
+</body>
+</html>
