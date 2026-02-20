@@ -81,21 +81,33 @@ nav { display: flex; }
     width: 100%;
 }
 
+/* --- UPDATED: Image Container Styles --- */
 .history-image-side {
     flex: 1; 
     position: relative;
-    background-image: url('history-image.jpg'); 
-    background-size: cover;
-    background-position: center;
     min-height: 400px; 
+    overflow: hidden; /* Keeps the image perfectly inside the box */
 }
 
+/* This makes sure any image you put inside acts like a background (fills the space) */
+.history-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents the image from stretching weirdly */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* The subtle green tint overlay */
 .history-image-side::after {
     content: '';
     position: absolute;
     top:0; left:0; right:0; bottom:0;
     background: rgba(31, 94, 70, 0.2); 
+    pointer-events: none;
 }
+/* --------------------------------------- */
 
 .history-content-side {
     flex: 1; 
@@ -107,7 +119,6 @@ nav { display: flex; }
     position: relative;
 }
 
-/* --- ADDED: BACK BUTTON STYLES --- */
 .back-btn {
     display: inline-flex;
     align-items: center;
@@ -120,14 +131,13 @@ nav { display: flex; }
     text-decoration: none;
     margin-bottom: 25px;
     transition: all 0.3s ease;
-    align-self: flex-start; /* Keeps it on the left side */
+    align-self: flex-start; 
 }
 
 .back-btn:hover {
     background-color: var(--medium-green);
-    transform: translateX(-5px); /* Slides left slightly when hovered */
+    transform: translateX(-5px); 
 }
-/* -------------------------------- */
 
 .sub-heading {
     color: var(--gold);
@@ -213,7 +223,9 @@ nav { display: flex; }
 
 <section class="history-container">
     
-    <div class="history-image-side"></div>
+    <div class="history-image-side">
+        <img src="try.jpg" alt="GCM History Image">
+    </div>
 
     <div class="history-content-side">
         
