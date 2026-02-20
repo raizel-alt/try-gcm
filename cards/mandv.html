@@ -75,13 +75,19 @@ nav { display: flex; }
 
 .nav-item a:hover { color: var(--medium-green); }
 
-/* --- PAGE CONTAINER --- */
 .page-container {
     padding: 60px 10%;
     min-height: 85vh;
 }
 
-/* --- BACK BUTTON --- */
+/* --- ADDED: HEADER WRAPPER FOR PERFECT ALIGNMENT --- */
+.header-wrapper {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px; /* Left for button, Center for text, Right empty for balance */
+    align-items: center; /* Centers everything horizontally */
+    margin-bottom: 50px;
+}
+
 .back-btn {
     display: inline-flex;
     align-items: center;
@@ -92,8 +98,8 @@ nav { display: flex; }
     color: var(--white);
     border-radius: 50%;
     text-decoration: none;
-    margin-bottom: 30px;
     transition: all 0.3s ease;
+    margin: 0; /* Removed old bottom margin */
 }
 
 .back-btn:hover {
@@ -101,11 +107,11 @@ nav { display: flex; }
     transform: translateX(-5px);
 }
 
-/* --- HEADER TEXT --- */
 .page-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin: 0; /* Removed old bottom margin */
 }
+/* ---------------------------------------------------- */
 
 .sub-heading {
     color: var(--gold);
@@ -120,23 +126,23 @@ nav { display: flex; }
 .main-heading {
     font-size: 3rem;
     color: var(--dark-green);
+    line-height: 1.1;
 }
 
-/* --- MISSION & VISION CARDS --- */
 .cards-wrapper {
     display: flex;
     gap: 40px;
     justify-content: center;
-    flex-wrap: wrap; /* Allows cards to stack on mobile */
+    flex-wrap: wrap; 
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .mv-card {
     flex: 1;
-    min-width: 300px; /* Prevents cards from getting too skinny */
+    min-width: 300px; 
     background: var(--white);
-    border-top: 6px solid var(--gold); /* Elegant top border */
+    border-top: 6px solid var(--gold); 
     border-radius: 8px;
     padding: 50px 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -166,7 +172,6 @@ nav { display: flex; }
     margin-bottom: 20px;
 }
 
-/* The text will naturally expand the card downward as you type more */
 .mv-text {
     font-size: 1.05rem;
     line-height: 1.8;
@@ -176,6 +181,12 @@ nav { display: flex; }
 @media (max-width: 768px) {
     .cards-wrapper {
         flex-direction: column;
+    }
+    .header-wrapper {
+        grid-template-columns: 45px 1fr 10px; /* Slightly tighter on mobile */
+    }
+    .main-heading {
+        font-size: 2.2rem;
     }
 }
 </style>
@@ -200,18 +211,22 @@ nav { display: flex; }
 </header>
 
 <section class="page-container">
-    <a href="../about.html" class="back-btn" title="Go Back">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="19" y1="12" x2="5" y2="12"></line>
-            <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-    </a>
+    
+    <div class="header-wrapper">
+        <a href="../about.html" class="back-btn" title="Go Back">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </a>
 
-    <div class="page-header">
-        <span class="sub-heading">Our Purpose</span>
-        <h1 class="main-heading">Mission & Vision</h1>
+        <div class="page-header">
+            <span class="sub-heading">Our Purpose</span>
+            <h1 class="main-heading">Mission & Vision</h1>
+        </div>
+        
+        <div></div>
     </div>
-
     <div class="cards-wrapper">
         
         <div class="mv-card">
