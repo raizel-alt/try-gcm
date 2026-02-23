@@ -1,1 +1,310 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCM | Our Principals</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/about.css">
+
+<style>
+/* --- SPECIFIC STYLES FOR PRINCIPALS PAGE --- */
+.page-header {
+    text-align: center;
+    padding: 60px 10% 20px;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    color: var(--dark-green);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.page-header p {
+    color: #555;
+    font-size: 1.05rem;
+}
+
+/* --- DOTA 2 STYLE HORIZONTAL CAROUSEL --- */
+.carousel-container {
+    width: 100%;
+    padding: 20px 0 80px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 30px 10%;
+    scroll-behavior: smooth;
+    /* This makes it snap to cards neatly on mobile */
+    scroll-snap-type: x mandatory; 
+}
+
+/* Customizing the scrollbar to look sleek and gold */
+.carousel::-webkit-scrollbar {
+    height: 10px;
+}
+.carousel::-webkit-scrollbar-track {
+    background: rgba(46, 139, 87, 0.1); 
+    border-radius: 10px;
+    margin: 0 10%;
+}
+.carousel::-webkit-scrollbar-thumb {
+    background: var(--gold); 
+    border-radius: 10px;
+}
+.carousel::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-green); 
+}
+
+/* The Logo Cards (Hero Selection Slots) */
+.logo-card {
+    flex: 0 0 auto;
+    width: 220px;
+    height: 280px;
+    background: var(--white);
+    border: 2px solid #eaeaea;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    scroll-snap-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+.logo-card img {
+    max-width: 100%;
+    max-height: 120px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.logo-card h3 {
+    font-size: 1rem;
+    color: var(--dark-green);
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Hover Effect (The "Pop Out" Selection Effect) */
+.logo-card:hover {
+    transform: scale(1.08) translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 30px rgba(197, 160, 77, 0.3);
+    z-index: 10;
+}
+
+/* --- MODAL (POPUP) STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 61, 46, 0.85); /* Dark green tint */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--white);
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border-top: 6px solid var(--gold);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--dark-green);
+}
+
+.modal-logo {
+    max-height: 80px;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.modal-desc {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-nav">
+    <div>PH: +63 917 123 4567 | info@gcmarketing.com.ph</div>
+    <div>MON - FRI: 9:00 AM - 6:00 PM</div>
+</div>
+
+<header>
+    <a href="index.html">
+        <img src="GCMLogo.png" alt="GCM Logo" class="site-logo">
+    </a>
+    <nav>
+        <div class="nav-item"><a href="index.html">Home</a></div>
+        <div class="nav-item"><a href="about.html">About Us</a></div>
+        <div class="nav-item"><a href="services.html">Services</a></div>
+        <div class="nav-item"><a href="principals.html" style="color: var(--gold);">Principals</a></div>
+        <div class="nav-item"><a href="contact.html">Contact Us</a></div>
+    </nav>
+</header>
+
+<div class="page-header">
+    <h1>Our Principals</h1>
+    <p>Select a partner below to learn more about their company and our collaboration.</p>
+</div>
+
+<section class="carousel-container">
+    <div class="carousel" id="roster">
+        
+        <div class="logo-card" 
+             data-title="Consolidated Distillers" 
+             data-desc="Consolidated Distillers of Far East is renowned for producing Club Valentino Rum. We have proudly distributed their high-quality spirits since our inception in 1984."
+             data-img="https://via.placeholder.com/200x120?text=Logo+1">
+            <img src="https://via.placeholder.com/200x120?text=Logo+1" alt="Consolidated Distillers">
+            <h3>Consolidated Distillers</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Lamoiyan Corporation" 
+             data-desc="The proud makers of Hapee Toothpaste, Lamoiyan Corporation is a 100% Filipino-owned company dedicated to providing affordable oral care products for every family."
+             data-img="https://via.placeholder.com/200x120?text=Logo+2">
+            <img src="https://via.placeholder.com/200x120?text=Logo+2" alt="Lamoiyan Corporation">
+            <h3>Lamoiyan Corp.</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Permex Producer & Exporter" 
+             data-desc="Permex is a leading producer of premium canned goods, including Paradiso Sardines and Tuna. Their commitment to quality ensures the freshest catch in every can."
+             data-img="https://via.placeholder.com/200x120?text=Logo+3">
+            <img src="https://via.placeholder.com/200x120?text=Logo+3" alt="Permex">
+            <h3>Permex</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="LG Goods Corporation" 
+             data-desc="LG Goods Corporation specializes in delicious, high-quality biscuits and snacks. They have been a staple in households for decades, providing comfort in every bite."
+             data-img="https://via.placeholder.com/200x120?text=Logo+4">
+            <img src="https://via.placeholder.com/200x120?text=Logo+4" alt="LG Goods">
+            <h3>LG Goods Corp.</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="MV Foods Corporation" 
+             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
+             data-img="https://via.placeholder.com/200x120?text=Logo+5">
+            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
+            <h3>MV Foods Corp.</h3>
+        </div>
+
+        </div>
+</section>
+
+<div class="modal-overlay" id="principalModal">
+    <div class="modal-content">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <img src="" alt="Company Logo" class="modal-logo" id="modalLogo">
+        <h2 class="modal-title" id="modalTitle">Company Name</h2>
+        <p class="modal-desc" id="modalDesc">Company description will appear here.</p>
+    </div>
+</div>
+
+<script>
+    // --- MODAL LOGIC ---
+    const cards = document.querySelectorAll('.logo-card');
+    const modal = document.getElementById('principalModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalLogo = document.getElementById('modalLogo');
+
+    // When a user clicks a logo card
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Get data from the clicked card
+            const title = card.getAttribute('data-title');
+            const desc = card.getAttribute('data-desc');
+            const imgSrc = card.getAttribute('data-img');
+
+            // Inject data into the modal
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalLogo.src = imgSrc;
+
+            // Show the modal
+            modal.classList.add('active');
+        });
+    });
+
+    // Close the modal when clicking the 'X'
+    closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    // Close the modal when clicking outside the white box (on the dark overlay)
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+
+    // --- MOUSE WHEEL HORIZONTAL SCROLLING ---
+    // This allows users to scroll sideways using their normal mouse wheel!
+    const roster = document.getElementById('roster');
+    roster.addEventListener('wheel', (evt) => {
+        evt.preventDefault();
+        roster.scrollLeft += evt.deltaY;
+    });
+</script>
+
+</body>
+</html>
