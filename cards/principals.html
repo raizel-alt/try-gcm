@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,12 +38,14 @@
     overflow-x: auto;
     gap: 20px;
     padding: 30px 10%;
-    scroll-behavior: smooth;
-    /* This makes it snap to cards neatly on mobile */
-    scroll-snap-type: x mandatory; 
+    cursor: grab; 
+    user-select: none; 
 }
 
-/* Customizing the scrollbar to look sleek and gold */
+.carousel:active {
+    cursor: grabbing;
+}
+
 .carousel::-webkit-scrollbar {
     height: 10px;
 }
@@ -73,11 +74,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     transition: all 0.3s ease;
-    scroll-snap-align: center;
     position: relative;
     padding: 20px;
+    pointer-events: auto; 
 }
 
 .logo-card img {
@@ -86,6 +86,7 @@
     object-fit: contain;
     transition: all 0.3s ease;
     margin-bottom: 15px;
+    pointer-events: none; 
 }
 
 .logo-card h3 {
@@ -93,9 +94,9 @@
     color: var(--dark-green);
     text-align: center;
     font-weight: 600;
+    pointer-events: none;
 }
 
-/* Hover Effect (The "Pop Out" Selection Effect) */
 .logo-card:hover {
     transform: scale(1.08) translateY(-10px);
     border-color: var(--gold);
@@ -107,7 +108,7 @@
 .modal-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(15, 61, 46, 0.85); /* Dark green tint */
+    background: rgba(15, 61, 46, 0.85); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,19 +186,21 @@
 </div>
 
 <header>
-    <a href="index.html">
+    <a href="../index.html">
         <img src="../GCMLogo.png" alt="GCM Logo" class="site-logo">
     </a>
     <nav>
         <div class="nav-item"><a href="../index.html">Home</a></div>
         <div class="nav-item"><a href="../about.html">About Us</a></div>
         <div class="nav-item"><a href="../services.html">Services</a></div>
+        <div class="nav-item"><a href="principals.html" style="color: var(--gold);">Principals</a></div>
         <div class="nav-item"><a href="../contact.html">Contact Us</a></div>
     </nav>
 </header>
 
 <div class="page-header">
     <h1>Our Principals</h1>
+    <p>Select a partner below to learn more about their company and our collaboration.</p>
 </div>
 
 <section class="carousel-container">
@@ -242,72 +245,72 @@
             <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
             <h3>MV Foods Corp.</h3>
         </div>
-        
-                <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="https://via.placeholder.com/200x120?text=Logo+5">
-            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
-            <h3>MV Foods Corp.</h3>
+
+        <div class="logo-card" 
+             data-title="Brand Name 6" 
+             data-desc="Description for Brand 6 will go here. You can add the company history or the products you distribute for them."
+             data-img="https://via.placeholder.com/200x120?text=Logo+6">
+            <img src="https://via.placeholder.com/200x120?text=Logo+6" alt="Brand 6">
+            <h3>Brand Name 6</h3>
         </div>
 
-                <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="https://via.placeholder.com/200x120?text=Logo+5">
-            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
-            <h3>MV Foods Corp.</h3>
+        <div class="logo-card" 
+             data-title="Brand Name 7" 
+             data-desc="Description for Brand 7 will go here. You can add the company history or the products you distribute for them."
+             data-img="https://via.placeholder.com/200x120?text=Logo+7">
+            <img src="https://via.placeholder.com/200x120?text=Logo+7" alt="Brand 7">
+            <h3>Brand Name 7</h3>
         </div>
 
-                <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="https://via.placeholder.com/200x120?text=Logo+5">
-            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
-            <h3>MV Foods Corp.</h3>
+        <div class="logo-card" 
+             data-title="Brand Name 8" 
+             data-desc="Description for Brand 8 will go here. You can add the company history or the products you distribute for them."
+             data-img="https://via.placeholder.com/200x120?text=Logo+8">
+            <img src="https://via.placeholder.com/200x120?text=Logo+8" alt="Brand 8">
+            <h3>Brand Name 8</h3>
         </div>
 
-                <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="https://via.placeholder.com/200x120?text=Logo+5">
-            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
-            <h3>MV Foods Corp.</h3>
+        <div class="logo-card" 
+             data-title="Brand Name 9" 
+             data-desc="Description for Brand 9 will go here. You can add the company history or the products you distribute for them."
+             data-img="https://via.placeholder.com/200x120?text=Logo+9">
+            <img src="https://via.placeholder.com/200x120?text=Logo+9" alt="Brand 9">
+            <h3>Brand Name 9</h3>
         </div>
 
-                <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="https://via.placeholder.com/200x120?text=Logo+5">
-            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
-            <h3>MV Foods Corp.</h3>
+        <div class="logo-card" 
+             data-title="Brand Name 10" 
+             data-desc="Description for Brand 10 will go here. You can add the company history or the products you distribute for them."
+             data-img="https://via.placeholder.com/200x120?text=Logo+10">
+            <img src="https://via.placeholder.com/200x120?text=Logo+10" alt="Brand 10">
+            <h3>Brand Name 10</h3>
         </div>
 
-                <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="https://via.placeholder.com/200x120?text=Logo+5">
-            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
-            <h3>MV Foods Corp.</h3>
+        <div class="logo-card" 
+             data-title="Brand Name 11" 
+             data-desc="Description for Brand 11 will go here. You can add the company history or the products you distribute for them."
+             data-img="https://via.placeholder.com/200x120?text=Logo+11">
+            <img src="https://via.placeholder.com/200x120?text=Logo+11" alt="Brand 11">
+            <h3>Brand Name 11</h3>
         </div>
 
-                <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="https://via.placeholder.com/200x120?text=Logo+5">
-            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
-            <h3>MV Foods Corp.</h3>
+        <div class="logo-card" 
+             data-title="Brand Name 12" 
+             data-desc="Description for Brand 12 will go here. You can add the company history or the products you distribute for them."
+             data-img="https://via.placeholder.com/200x120?text=Logo+12">
+            <img src="https://via.placeholder.com/200x120?text=Logo+12" alt="Brand 12">
+            <h3>Brand Name 12</h3>
         </div>
 
-                <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="https://via.placeholder.com/200x120?text=Logo+5">
-            <img src="https://via.placeholder.com/200x120?text=Logo+5" alt="MV Foods">
-            <h3>MV Foods Corp.</h3>
+        <div class="logo-card" 
+             data-title="Brand Name 13" 
+             data-desc="Description for Brand 13 will go here. You can add the company history or the products you distribute for them."
+             data-img="https://via.placeholder.com/200x120?text=Logo+13">
+            <img src="https://via.placeholder.com/200x120?text=Logo+13" alt="Brand 13">
+            <h3>Brand Name 13</h3>
         </div>
 
-        </div>
+    </div>
 </section>
 
 <div class="modal-overlay" id="principalModal">
@@ -320,7 +323,53 @@
 </div>
 
 <script>
-    // --- MODAL LOGIC ---
+    // --- 1. CLICK AND DRAG LOGIC ---
+    const roster = document.getElementById('roster');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let isDragging = false; 
+
+    roster.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragging = false; 
+        startX = e.pageX - roster.offsetLeft;
+        scrollLeft = roster.scrollLeft;
+    });
+
+    roster.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    roster.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    roster.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        isDragging = true; 
+        const x = e.pageX - roster.offsetLeft;
+        const walk = (x - startX) * 1.5; 
+        roster.scrollLeft = scrollLeft - walk;
+    });
+
+    // --- 2. SMOOTH MOUSE WHEEL LOGIC ---
+    roster.addEventListener('wheel', (evt) => {
+        const atLeftEdge = roster.scrollLeft === 0;
+        const atRightEdge = roster.scrollLeft + roster.clientWidth >= roster.scrollWidth - 1;
+
+        if (evt.deltaY > 0 && !atRightEdge) {
+            evt.preventDefault();
+            roster.scrollLeft += evt.deltaY * 1.5;
+        } 
+        else if (evt.deltaY < 0 && !atLeftEdge) {
+            evt.preventDefault();
+            roster.scrollLeft += evt.deltaY * 1.5;
+        }
+    });
+
+    // --- 3. MODAL LOGIC ---
     const cards = document.querySelectorAll('.logo-card');
     const modal = document.getElementById('principalModal');
     const closeModalBtn = document.getElementById('closeModal');
@@ -329,42 +378,33 @@
     const modalDesc = document.getElementById('modalDesc');
     const modalLogo = document.getElementById('modalLogo');
 
-    // When a user clicks a logo card
     cards.forEach(card => {
-        card.addEventListener('click', () => {
-            // Get data from the clicked card
+        card.addEventListener('click', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                return;
+            }
+
             const title = card.getAttribute('data-title');
             const desc = card.getAttribute('data-desc');
             const imgSrc = card.getAttribute('data-img');
 
-            // Inject data into the modal
             modalTitle.textContent = title;
             modalDesc.textContent = desc;
             modalLogo.src = imgSrc;
 
-            // Show the modal
             modal.classList.add('active');
         });
     });
 
-    // Close the modal when clicking the 'X'
     closeModalBtn.addEventListener('click', () => {
         modal.classList.remove('active');
     });
 
-    // Close the modal when clicking outside the white box (on the dark overlay)
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.remove('active');
         }
-    });
-
-    // --- MOUSE WHEEL HORIZONTAL SCROLLING ---
-    // This allows users to scroll sideways using their normal mouse wheel!
-    const roster = document.getElementById('roster');
-    roster.addEventListener('wheel', (evt) => {
-        evt.preventDefault();
-        roster.scrollLeft += evt.deltaY;
     });
 </script>
 
