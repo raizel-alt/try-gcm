@@ -41,12 +41,10 @@
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 
-                // Only animate if it's a real link to another page
                 if (href && href !== '#' && !href.startsWith('http')) {
-                    e.preventDefault(); // Stop immediate jump
-                    document.body.classList.add('fade-out'); // Start fade out
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
                     
-                    // Wait for CSS transition (400ms) then change page
                     setTimeout(() => {
                         window.location.href = href;
                     }, 200); 
@@ -55,14 +53,12 @@
         });
     });
 
-    // Fix for browsers caching the "fade-out" state when using the back button
     window.addEventListener('pageshow', function (event) {
         if (event.persisted) {
             document.body.classList.remove('fade-out');
         }
     });
 
-    /* IMAGE SLIDER LOGIC */
     const sliderImages = [
         'sample.jpg',
         'sample2.jpg',
@@ -86,6 +82,7 @@
 </body>
 
 </html>
+
 
 
 
