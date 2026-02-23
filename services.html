@@ -6,118 +6,8 @@
 <title>GCM | Services</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/about.css">
 
-<style>
-:root {
-    --dark-green: #2E8B57;
-    --medium-green: #1f5e46;
-    --light-green: #2f7d5c;
-    --gold: #c5a04d; 
-    --soft-bg: #f3f7f5;
-    --white: #ffffff;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--soft-bg);
-    color: var(--dark-green);
-    animation: fadeIn 0.5s ease-in-out;
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-body.fade-out { opacity: 0; }
-
-.top-nav {
-    background: var(--dark-green);
-    color: var(--white);
-    padding: 8px 8%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-}
-
-header {
-    background: var(--white);
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.site-logo { max-height: 65px; }
-
-nav { display: flex; }
-
-.nav-item { margin-left: 35px; }
-
-.nav-item a {
-    text-decoration: none;
-    color: var(--dark-green);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.nav-item a:hover { color: var(--medium-green); }
-
-.card-section { padding: 80px 10%; }
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.interactive-card {
-    position: relative;
-    height: 260px;
-    padding: 40px 30px;
-    color: var(--white);
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.card-1 { background-color: var(--dark-green); }
-.card-2 { background-color: var(--medium-green); }
-.card-3 { background-color: var(--gold); }
-
-.card-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--white);
-}
-
-.card-content {
-    margin-top: auto;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.4s ease;
-}
-
-.interactive-card:hover .card-content {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.view-more {
-    margin-top: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-</style>
 </head>
 
 <body>
@@ -139,40 +29,44 @@ nav { display: flex; }
 
 <section class="card-section">
     <div style="text-align:center; margin-bottom:60px;">
-        <h1 style="font-size:2.5rem; font-weight:700;">Our Services</h1>
-        <p style="margin-top:15px; font-weight:300;">
-            <!-- Add your introduction here -->
-        </p>
+        <h1 style="font-size:2.5rem; font-weight:700; color: var(--dark-green);">Our Services</h1>
+        <p style="margin-top:15px; font-weight:300; color: var(--dark-green);">
+            </p>
     </div>
 
     <div class="card-grid">
 
-        <a href="#" class="interactive-card card-1">
-            <h2 class="card-title">Service One</h2>
+        <a href="serviceone.html" class="interactive-card card-1">
+            <h2 class="card-title">Service<br>One</h2>
             <div class="card-content">
-                <p><!-- Add description here --></p>
-                <div class="view-more">View More →</div>
+                <div class="view-more">
+                    View More <div class="view-more-icon">&rarr;</div>
+                </div>
             </div>
         </a>
 
-        <a href="services.html" class="interactive-card card-2">
-            <h2 class="card-title">Service Two</h2>
+        <a href="#" class="interactive-card card-2">
+            <h2 class="card-title">Service<br>Two</h2>
             <div class="card-content">
-                <p><!-- Add description here --></p>
-                <div class="view-more">View More →</div>
+                <div class="view-more">
+                    View More <div class="view-more-icon">&rarr;</div>
+                </div>
             </div>
         </a>
 
         <a href="#" class="interactive-card card-3">
-            <h2 class="card-title">Service Three</h2>
+            <h2 class="card-title">Service<br>Three</h2>
             <div class="card-content">
-                <p><!-- Add description here --></p>
-                <div class="view-more">View More →</div>
+                <div class="view-more">
+                    View More <div class="view-more-icon">&rarr;</div>
+                </div>
             </div>
         </a>
 
     </div>
 </section>
+
+<script src="javascript/about.js"></script>
 
 </body>
 </html>
