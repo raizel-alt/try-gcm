@@ -80,7 +80,7 @@ nav { display: flex; }
     background: var(--white);
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    overflow: hidden; /* Keeps the rounded corners clean */
+    overflow: hidden; 
 }
 
 /* Left Side: Info */
@@ -178,6 +178,11 @@ nav { display: flex; }
     outline: none;
 }
 
+/* Added property to force vertical-only resizing */
+.input-box textarea {
+    resize: vertical;
+}
+
 /* Focus effect when clicking the box */
 .input-box input:focus, 
 .input-box textarea:focus {
@@ -222,7 +227,7 @@ nav { display: flex; }
 /* Mobile Responsiveness */
 @media (max-width: 850px) {
     .contact-card {
-        flex-direction: column; /* Stacks the left and right sides on small screens */
+        flex-direction: column; 
     }
     .contact-form-side {
         padding: 40px 25px;
