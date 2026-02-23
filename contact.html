@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GCM | Contact</title>
+<title>GCM | Contact Us</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -13,9 +13,9 @@
     --medium-green: #1f5e46;
     --light-green: #e9f2ec;
     --gold: #c5a04d;
-    --soft-bg: #f3f7f5;
-    --white: #ffffff;
+    --soft-bg: #ffffff;
     --text-dark: #333333;
+    --border-color: #cccccc;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,10 +26,10 @@ body {
     color: var(--text-dark);
 }
 
-/* --- NAVIGATION & HEADER --- */
+/* Navigation */
 .top-nav {
     background: var(--dark-green);
-    color: var(--white);
+    color: #ffffff;
     padding: 8px 8%;
     display: flex;
     justify-content: space-between;
@@ -37,7 +37,7 @@ body {
 }
 
 header {
-    background: var(--white);
+    background: #ffffff;
     padding: 18px 8%;
     display: flex;
     justify-content: space-between;
@@ -64,178 +64,146 @@ nav { display: flex; }
 
 .nav-item a:hover, .nav-item.active a { color: var(--gold); }
 
-/* --- CONTACT SECTION (SPLIT LAYOUT) --- */
-.contact-section {
-    padding: 60px 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-}
-
-.contact-card {
-    display: flex;
-    width: 100%;
-    max-width: 1000px;
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    overflow: hidden; 
-}
-
-/* Left Side: Info */
-.contact-info {
-    flex: 1;
-    background: var(--dark-green);
-    color: var(--white);
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.contact-info h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: var(--white);
-}
-
-.contact-info p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    opacity: 0.9;
-}
-
-.info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-.info-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.info-details h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.info-details span {
-    font-size: 0.9rem;
-    opacity: 0.85;
-    line-height: 1.5;
-    display: block;
-}
-
-/* Right Side: Form */
-.contact-form-side {
-    flex: 1.2;
-    padding: 50px 40px;
-    background: var(--white);
-    position: relative;
-}
-
-.contact-form-side h2 {
-    font-size: 1.8rem;
+/* Main Contact Layout */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--dark-green);
-    margin-bottom: 30px;
-    font-weight: 600;
+    margin: 50px 0 20px;
+    text-transform: uppercase;
 }
 
-.input-box {
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5% 80px;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Left Side: Form (Like Ginebra Site) */
+.form-section {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.form-group {
     margin-bottom: 25px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.input-box input, 
-.input-box textarea {
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.form-group label span {
+    color: red; /* The red asterisk */
+}
+
+.form-group input, 
+.form-group textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     font-family: inherit;
     font-size: 0.95rem;
-    color: var(--text-dark);
-    background: #fafafa;
-    transition: all 0.3s ease;
+    background: #fdfdfd;
+    transition: border-color 0.3s ease;
     outline: none;
-}
-
-/* Added property to force vertical-only resizing */
-.input-box textarea {
     resize: vertical;
 }
 
-/* Focus effect when clicking the box */
-.input-box input:focus, 
-.input-box textarea:focus {
+.form-group input:focus, 
+.form-group textarea:focus {
     border-color: var(--dark-green);
-    background: var(--white);
-    box-shadow: 0 0 0 3px var(--light-green);
 }
 
 .submit-btn {
     background: var(--dark-green);
-    color: var(--white);
-    padding: 14px 30px;
+    color: #ffffff;
+    padding: 15px 40px;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: background 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
 }
 
 .submit-btn:hover {
     background: var(--medium-green);
 }
 
-/* Success Message Styles */
 .success-message {
     display: none;
     background: var(--light-green);
     color: var(--dark-green);
     padding: 15px;
-    border-radius: 6px;
+    border-radius: 4px;
     margin-bottom: 20px;
-    text-align: center;
     font-weight: 500;
+    border-left: 4px solid var(--dark-green);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 850px) {
-    .contact-card {
-        flex-direction: column; 
-    }
-    .contact-form-side {
-        padding: 40px 25px;
+/* Right Side: Contact Details (Like Ginebra Site) */
+.details-section {
+    flex: 1;
+    min-width: 300px;
+    padding-top: 10px;
+}
+
+.details-block {
+    margin-bottom: 40px;
+}
+
+.details-block h3 {
+    font-size: 1.2rem;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.details-block p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555555;
+}
+
+.details-block strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.details-block a {
+    color: var(--dark-green);
+    text-decoration: none;
+}
+
+.details-block a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
     }
 }
 </style>
 </head>
-
 <body>
 
 <div class="top-nav">
@@ -255,102 +223,101 @@ nav { display: flex; }
     </nav>
 </header>
 
-<section class="contact-section">
-    <div class="contact-card">
-        
-        <div class="contact-info">
-            <div>
-                <h2>Get in Touch</h2>
-                <p>We are here to help and answer any question you might have. We look forward to hearing from you.</p>
-            </div>
-            
-            <div class="info-list">
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    </div>
-                    <div class="info-details">
-                        <h4>Location</h4>
-                        <span>Divisoria Street<br>Cagayan de Oro City</span>
-                    </div>
-                </div>
+<h1 class="page-title">Contact Us</h1>
 
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    </div>
-                    <div class="info-details">
-                        <h4>Phone</h4>
-                        <span>+63 917 123 4567</span>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                    </div>
-                    <div class="info-details">
-                        <h4>Email</h4>
-                        <span>info@gcmarketing.com.ph</span>
-                    </div>
-                </div>
-            </div>
+<section class="contact-container">
+    
+    <div class="form-section">
+        <div id="successMessage" class="success-message">
+            Thank you! Your message has been sent successfully.
         </div>
 
-        <div class="contact-form-side">
-            <h2>Send a Message</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label>Name <span>*</span></label>
+                <input type="text" id="fullName" required>
+            </div>
             
-            <div id="successMessage" class="success-message">
-                Your message was sent successfully!
+            <div class="form-group">
+                <label>Birthday <span>*</span></label>
+                <input type="date" id="birthday" required>
             </div>
 
-            <form id="contactForm">
-                <div class="input-box">
-                    <input type="text" id="fullName" placeholder="Full Name" required>
-                </div>
-                <div class="input-box">
-                    <input type="email" id="emailAddress" placeholder="Email Address" required>
-                </div>
-                <div class="input-box">
-                    <textarea id="userMessage" rows="5" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn" id="sendBtn">
-                    <span id="btnText">Send Message</span>
-                </button>
-            </form>
+            <div class="form-group">
+                <label>Contact Number <span>*</span></label>
+                <input type="tel" id="contactNum" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email <span>*</span></label>
+                <input type="email" id="emailAdd" required>
+            </div>
+            
+            <div class="form-group">
+                <label>City/Municipality <span>*</span></label>
+                <input type="text" id="city" required>
+            </div>
+
+            <div class="form-group">
+                <label>Country <span>*</span></label>
+                <input type="text" id="country" required>
+            </div>
+
+            <div class="form-group">
+                <label>Message <span>*</span></label>
+                <textarea id="messageBox" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
+        </form>
+    </div>
+
+    <div class="details-section">
+        
+        <div class="details-block">
+            <h3>Corporate Head Office</h3>
+            <p>
+                <strong>GOLDEN CENTURY MARKETING</strong><br>
+                Divisoria Street<br>
+                Cagayan de Oro City, Philippines<br>
+                Telephone No.: (088) 856 1234
+            </p>
+        </div>
+
+        <div class="details-block">
+            <h3>Customer Care</h3>
+            <p>
+                For inquiries, orders, and suggestions on our products and services, please write or call:<br><br>
+                <strong>GOLDEN CENTURY MARKETING</strong><br>
+                Telephone No.: +63 917 123 4567<br>
+                Email: <a href="mailto:info@gcmarketing.com.ph">info@gcmarketing.com.ph</a><br>
+                Sales: <a href="mailto:sales@gcmarketing.com.ph">sales@gcmarketing.com.ph</a>
+            </p>
         </div>
 
     </div>
+
 </section>
 
 <script>
     const form = document.getElementById('contactForm');
     const sendBtn = document.getElementById('sendBtn');
-    const btnText = document.getElementById('btnText');
     const successMessage = document.getElementById('successMessage');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Stop page refresh
+        event.preventDefault();
 
-        // Change button to show it is loading
-        btnText.textContent = "Sending...";
+        sendBtn.textContent = "Sending...";
         sendBtn.style.opacity = "0.7";
         sendBtn.style.pointerEvents = "none";
 
-        // Wait for 1.5 seconds to fake the sending process
         setTimeout(() => {
-            // Show the success message box
             successMessage.style.display = "block";
-            
-            // Clear the typed text from the boxes
             form.reset();
-
-            // Put the button back to normal
-            btnText.textContent = "Send Message";
+            sendBtn.textContent = "Submit";
             sendBtn.style.opacity = "1";
             sendBtn.style.pointerEvents = "auto";
 
-            // Hide the success message after 4 seconds
             setTimeout(() => {
                 successMessage.style.display = "none";
             }, 4000);
