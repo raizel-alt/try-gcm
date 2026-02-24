@@ -39,6 +39,7 @@
     cursor: grabbing;
 }
 
+/* --- FIX FOR THE ALIGNMENT ISSUE --- */
 .logo-card {
     flex: 0 0 auto;
     width: 280px;  
@@ -49,19 +50,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* Changed from center to flex-start to keep titles pinned to the bottom */
+    justify-content: flex-start; 
     transition: all 0.4s ease;
     position: relative;
     padding: 30px 20px;
     pointer-events: auto; 
 }
 
+/* Added a wrapper for the image so the images are always perfectly centered 
+   in the same sized box, regardless of the text below them */
+.logo-card .img-wrapper {
+    width: 100%;
+    height: 180px; /* Fixed height for image area */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
 .logo-card img {
     width: 100%;
-    max-height: 180px; 
+    max-height: 100%; /* Fill the wrapper */
     object-fit: contain;
     transition: all 0.4s ease;
-    margin-bottom: 25px;
     pointer-events: none; 
     filter: grayscale(20%) opacity(0.9); 
 }
@@ -75,7 +87,14 @@
     line-height: 1.3;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    /* This guarantees the text area is always the same height, 
+       even if it wraps to 2 lines! */
+    min-height: 3.2rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+/* ----------------------------------- */
 
 .logo-card:hover {
     transform: translateY(-15px); 
