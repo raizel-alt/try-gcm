@@ -164,26 +164,22 @@
     font-weight: 700;
 }
 
-/* --- THE FIX: BULLETPROOF 2-COLUMN SETTINGS --- */
 .modal-desc {
     color: #555;
     font-size: 0.95rem;
     line-height: 1.6;
     text-align: left;
     
-    /* Forces anything inside to split into 2 columns */
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    column-gap: 40px; /* Space between the two sides */
+    column-gap: 40px; 
     
-    /* Forces long text to break downward instead of stretching horizontally */
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
 }
 
-/* Make sure lists inside the modal look perfect */
 .modal-desc ul {
     margin: 0;
     padding-left: 20px;
@@ -191,7 +187,7 @@
 
 .modal-desc li {
     margin-bottom: 8px;
-    break-inside: avoid-column; /* Prevents a single bullet from splitting in half */
+    break-inside: avoid-column; 
     page-break-inside: avoid;
 }
 
@@ -200,7 +196,6 @@
     margin-bottom: 10px;
 }
 
-/* Only drop to 1 column on extremely small mobile phones */
 @media (max-width: 450px) {
     .modal-desc {
         column-count: 1; 
@@ -260,7 +255,6 @@
                     Km. 15 West Service Road, South Superhighway<br>
                     Marcelo Green, Parañaque City, Philippines
                 </div>
-                
             </div>
         </div>
 
@@ -269,6 +263,11 @@
             <h3>Lamoiyan Corp.</h3>
             <div class="hidden-desc" style="display: none;">
                 <p>The proud makers of Hapee Toothpaste, Lamoiyan Corporation is a 100% Filipino-owned company dedicated to providing affordable oral care products for every family.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Km. 15 West Service Road, South Superhighway<br>
+                    Marcelo Green, Parañaque City, Philippines
+                </div>
             </div>
         </div>
 
@@ -277,6 +276,11 @@
             <h3>Permex</h3>
             <div class="hidden-desc" style="display: none;">
                 <p>Permex is a leading producer of premium canned goods, including Paradiso Sardines and Tuna. Their commitment to quality ensures the freshest catch in every can.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Permex Address Line 1<br>
+                    Permex Address Line 2
+                </div>
             </div>
         </div>
 
@@ -285,6 +289,11 @@
             <h3>LG Goods Corp.</h3>
             <div class="hidden-desc" style="display: none;">
                 <p>LG Goods Corporation specializes in delicious, high-quality biscuits and snacks. They have been a staple in households for decades, providing comfort in every bite.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    LG Goods Address Line 1<br>
+                    LG Goods Address Line 2
+                </div>
             </div>
         </div>
 
@@ -293,48 +302,116 @@
             <h3>MV Foods Corp.</h3>
             <div class="hidden-desc" style="display: none;">
                 <p>Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    MV Foods Address Line 1<br>
+                    MV Foods Address Line 2
+                </div>
             </div>
         </div>
 
         <div class="logo-card" data-title="Brand Name 6" data-img="template.png">
             <img src="template.png" alt="Brand 6">
             <h3>Brand Name 6</h3>
-            <div class="hidden-desc" style="display: none;"><p>Description for Brand 6 will go here.</p></div>
+            <div class="hidden-desc" style="display: none;">
+                <p>Description for Brand 6 will go here.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 6 Address Line 1<br>
+                    Brand 6 Address Line 2
+                </div>
+            </div>
         </div>
+        
         <div class="logo-card" data-title="Brand Name 7" data-img="template.png">
             <img src="template.png" alt="Brand 7">
             <h3>Brand Name 7</h3>
-            <div class="hidden-desc" style="display: none;"><p>Description for Brand 7 will go here.</p></div>
+            <div class="hidden-desc" style="display: none;">
+                <p>Description for Brand 7 will go here.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 7 Address Line 1<br>
+                    Brand 7 Address Line 2
+                </div>
+            </div>
         </div>
+        
         <div class="logo-card" data-title="Brand Name 8" data-img="template.png">
             <img src="template.png" alt="Brand 8">
             <h3>Brand Name 8</h3>
-            <div class="hidden-desc" style="display: none;"><p>Description for Brand 8 will go here.</p></div>
+            <div class="hidden-desc" style="display: none;">
+                <p>Description for Brand 8 will go here.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 8 Address Line 1<br>
+                    Brand 8 Address Line 2
+                </div>
+            </div>
         </div>
+        
         <div class="logo-card" data-title="Brand Name 9" data-img="template.png">
             <img src="template.png" alt="Brand 9">
             <h3>Brand Name 9</h3>
-            <div class="hidden-desc" style="display: none;"><p>Description for Brand 9 will go here.</p></div>
+            <div class="hidden-desc" style="display: none;">
+                <p>Description for Brand 9 will go here.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 9 Address Line 1<br>
+                    Brand 9 Address Line 2
+                </div>
+            </div>
         </div>
+        
         <div class="logo-card" data-title="Brand Name 10" data-img="template.png">
             <img src="template.png" alt="Brand 10">
             <h3>Brand Name 10</h3>
-            <div class="hidden-desc" style="display: none;"><p>Description for Brand 10 will go here.</p></div>
+            <div class="hidden-desc" style="display: none;">
+                <p>Description for Brand 10 will go here.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 10 Address Line 1<br>
+                    Brand 10 Address Line 2
+                </div>
+            </div>
         </div>
+        
         <div class="logo-card" data-title="Brand Name 11" data-img="template.png">
             <img src="template.png" alt="Brand 11">
             <h3>Brand Name 11</h3>
-            <div class="hidden-desc" style="display: none;"><p>Description for Brand 11 will go here.</p></div>
+            <div class="hidden-desc" style="display: none;">
+                <p>Description for Brand 11 will go here.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 11 Address Line 1<br>
+                    Brand 11 Address Line 2
+                </div>
+            </div>
         </div>
+        
         <div class="logo-card" data-title="Brand Name 12" data-img="template.png">
             <img src="template.png" alt="Brand 12">
             <h3>Brand Name 12</h3>
-            <div class="hidden-desc" style="display: none;"><p>Description for Brand 12 will go here.</p></div>
+            <div class="hidden-desc" style="display: none;">
+                <p>Description for Brand 12 will go here.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 12 Address Line 1<br>
+                    Brand 12 Address Line 2
+                </div>
+            </div>
         </div>
+        
         <div class="logo-card" data-title="Brand Name 13" data-img="template.png">
             <img src="template.png" alt="Brand 13">
             <h3>Brand Name 13</h3>
-            <div class="hidden-desc" style="display: none;"><p>Description for Brand 13 will go here.</p></div>
+            <div class="hidden-desc" style="display: none;">
+                <p>Description for Brand 13 will go here.</p>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 13 Address Line 1<br>
+                    Brand 13 Address Line 2
+                </div>
+            </div>
         </div>
 
     </div>
@@ -381,16 +458,16 @@
     });
 
     roster.addEventListener('wheel', (evt) => {
-        const atLeftEdge = roster.scrollLeft === 0;
+        const atLeftEdge = roster.scrollLeft <= 0;
         const atRightEdge = roster.scrollLeft + roster.clientWidth >= roster.scrollWidth - 1;
 
         if (evt.deltaY > 0 && !atRightEdge) {
             evt.preventDefault();
-            roster.scrollLeft += evt.deltaY * 1.5;
+            roster.scrollBy({ left: evt.deltaY * 2.5, behavior: 'smooth' });
         } 
         else if (evt.deltaY < 0 && !atLeftEdge) {
             evt.preventDefault();
-            roster.scrollLeft += evt.deltaY * 1.5;
+            roster.scrollBy({ left: evt.deltaY * 2.5, behavior: 'smooth' });
         }
     });
 
