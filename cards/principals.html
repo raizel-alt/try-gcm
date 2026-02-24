@@ -164,30 +164,46 @@
     font-weight: 700;
 }
 
+/* --- THE FIX: BULLETPROOF 2-COLUMN SETTINGS --- */
 .modal-desc {
     color: #555;
     font-size: 0.95rem;
     line-height: 1.6;
     text-align: left;
+    
+    /* Forces anything inside to split into 2 columns */
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    column-gap: 40px; /* Space between the two sides */
+    
+    /* Forces long text to break downward instead of stretching horizontally */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
-/* Perfect two column grid for lists */
-.modal-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 30px;
+/* Make sure lists inside the modal look perfect */
+.modal-desc ul {
+    margin: 0;
     padding-left: 20px;
-    margin-top: 10px;
 }
 
-.modal-list li {
-    color: #555;
-    font-size: 0.95rem;
+.modal-desc li {
+    margin-bottom: 8px;
+    break-inside: avoid-column; /* Prevents a single bullet from splitting in half */
+    page-break-inside: avoid;
 }
 
-@media (max-width: 600px) {
-    .modal-list {
-        grid-template-columns: 1fr; 
+.modal-desc p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Only drop to 1 column on extremely small mobile phones */
+@media (max-width: 450px) {
+    .modal-desc {
+        column-count: 1; 
     }
 }
 </style>
@@ -225,8 +241,8 @@
             <h3>Lamoiyan Corporation</h3>
             
             <div class="hidden-desc" style="display: none;">
-                <p style="font-weight: 600; color: var(--dark-green); margin-bottom: 5px;">Product Lines:</p>
-                <ul class="modal-list">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
                     <li>Hapee Toothpaste</li>
                     <li>Hapee Kiddie Toothgel</li>
                     <li>Kutitap Toothpaste</li>
@@ -388,12 +404,10 @@
 
             const title = card.getAttribute('data-title');
             const imgSrc = card.getAttribute('data-img');
-            // GRAB HTML DIRECTLY FROM THE HIDDEN DIV
             const descHTML = card.querySelector('.hidden-desc').innerHTML;
 
             modalTitle.textContent = title;
             modalLogo.src = imgSrc;
-            // INSERT THE PERFECT HTML DIRECTLY
             modalDesc.innerHTML = descHTML;
 
             modal.classList.add('active');
