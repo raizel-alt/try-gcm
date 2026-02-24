@@ -80,11 +80,10 @@ nav { display: flex; }
     min-height: 85vh;
 }
 
-/* --- ADDED: HEADER WRAPPER FOR PERFECT ALIGNMENT --- */
 .header-wrapper {
     display: grid;
-    grid-template-columns: 50px 1fr 50px; /* Left for button, Center for text, Right empty for balance */
-    align-items: center; /* Centers everything horizontally */
+    grid-template-columns: 50px 1fr 50px; 
+    align-items: center; 
     margin-bottom: 50px;
 }
 
@@ -99,7 +98,7 @@ nav { display: flex; }
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
-    margin: 0; /* Removed old bottom margin */
+    margin: 0; 
 }
 
 .back-btn:hover {
@@ -109,9 +108,8 @@ nav { display: flex; }
 
 .page-header {
     text-align: center;
-    margin: 0; /* Removed old bottom margin */
+    margin: 0; 
 }
-/* ---------------------------------------------------- */
 
 .sub-heading {
     color: var(--gold);
@@ -147,12 +145,27 @@ nav { display: flex; }
     padding: 50px 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Added to keep the hex image positioned inside the card */
 }
 
 .mv-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
+
+/* --- ADDED: Hexagonal Image Template CSS --- */
+.hex-image {
+    position: absolute; /* Floats it without stretching the card */
+    top: 30px;
+    right: 30px;
+    width: 90px;  /* Size of the image */
+    height: 90px;
+    object-fit: cover; /* Prevents the image from looking squished */
+    /* This creates the perfect hexagon shape */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background-color: #eee; /* Placeholder background color */
+}
+/* ------------------------------------------ */
 
 .card-icon {
     width: 60px;
@@ -170,6 +183,7 @@ nav { display: flex; }
     font-size: 2rem;
     color: var(--dark-green);
     margin-bottom: 20px;
+    padding-right: 70px; /* Ensures long titles don't touch the image */
 }
 
 .mv-text {
@@ -183,10 +197,16 @@ nav { display: flex; }
         flex-direction: column;
     }
     .header-wrapper {
-        grid-template-columns: 45px 1fr 10px; /* Slightly tighter on mobile */
+        grid-template-columns: 45px 1fr 10px; 
     }
     .main-heading {
         font-size: 2.2rem;
+    }
+    .hex-image {
+        width: 70px;
+        height: 70px;
+        top: 20px;
+        right: 20px;
     }
 }
 </style>
@@ -227,9 +247,12 @@ nav { display: flex; }
         
         <div></div>
     </div>
+
     <div class="cards-wrapper">
         
         <div class="mv-card">
+            <img src="https://via.placeholder.com/150" alt="Mission Image" class="hex-image">
+
             <div class="card-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -239,12 +262,13 @@ nav { display: flex; }
             </div>
             <h2 class="mv-title">Our Mission</h2>
             <div class="mv-text">
-                GOLDEN CENTURY MARKETING shall pursue a sustainable Business Strategy anchored on a Responsive, 
-                Efficient and Effective Management in partnership with our valued Principals and Stakeholders.
+                To provide unparalleled marketing solutions that elevate our partners' brands, drive sustained growth, and deliver value through innovation, dedication, and integrity. We aim to connect products with people efficiently and effectively.
             </div>
         </div>
 
         <div class="mv-card">
+            <img src="https://via.placeholder.com/150" alt="Vision Image" class="hex-image">
+
             <div class="card-icon">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -253,15 +277,7 @@ nav { display: flex; }
             </div>
             <h2 class="mv-title">Our Vision</h2>
             <div class="mv-text">
-                We envision GOLDEN CENTURY MARKETING to be a 
-                Major Player in the Marketing & Distribution business 
-                covering North Eastern to North Western Mindanao. 
-                We have endeavored over many years to build the Trust
-                & Confidence of all our Business Partners and Stakeholders. 
-                We can achieve this VISION thru PEOPLE who are the forefront 
-                of our Company Strategies and Plans, 
-                drawing inspiration and guidance from GOD.
-
+                To be the most trusted and preferred marketing distributor in the country, recognized for our operational excellence, strong partnerships, and commitment to shaping the future of the industry.
             </div>
         </div>
 
