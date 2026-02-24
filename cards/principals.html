@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="../css/about.css">
 
 <style>
-/* --- SPECIFIC STYLES FOR PRINCIPALS PAGE --- */
 .page-header {
     text-align: center;
     padding: 60px 10% 20px;
@@ -27,7 +26,6 @@
     font-size: 1.05rem;
 }
 
-/* --- DOTA 2 STYLE HORIZONTAL CAROUSEL --- */
 .carousel-container {
     width: 100%;
     padding: 20px 0 80px;
@@ -36,11 +34,10 @@
 .carousel {
     display: flex;
     overflow-x: auto;
-    gap: 25px; /* Increased gap */
+    gap: 25px; 
     padding: 30px 10%;
     cursor: grab; 
     user-select: none; 
-    /* Hides scrollbar for a cleaner look */
     scrollbar-width: none; 
     -ms-overflow-style: none;  
 }
@@ -53,13 +50,12 @@
     cursor: grabbing;
 }
 
-/* --- THE UPDATED CARD LAYOUT --- */
 .logo-card {
     flex: 0 0 auto;
-    width: 280px;  /* Wider */
-    height: 350px; /* Taller */
+    width: 280px;  
+    height: 350px; 
     background: var(--white);
-    border-radius: 15px; /* Softer edges */
+    border-radius: 15px; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
@@ -73,16 +69,16 @@
 
 .logo-card img {
     width: 100%;
-    max-height: 180px; /* Larger image area */
+    max-height: 180px; 
     object-fit: contain;
     transition: all 0.4s ease;
     margin-bottom: 25px;
     pointer-events: none; 
-    filter: grayscale(20%) opacity(0.9); /* Subtle dim effect */
+    filter: grayscale(20%) opacity(0.9); 
 }
 
 .logo-card h3 {
-    font-size: 1.2rem; /* Larger font */
+    font-size: 1.2rem; 
     color: var(--dark-green);
     text-align: center;
     font-weight: 700;
@@ -92,18 +88,16 @@
     letter-spacing: 0.5px;
 }
 
-/* Updated Hover Effect */
 .logo-card:hover {
-    transform: translateY(-15px); /* Higher lift */
-    box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15); /* Greenish shadow */
+    transform: translateY(-15px); 
+    box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15); 
 }
 
 .logo-card:hover img {
-    filter: grayscale(0%) opacity(1); /* Full color on hover */
-    transform: scale(1.05); /* Slight zoom */
+    filter: grayscale(0%) opacity(1); 
+    transform: scale(1.05); 
 }
 
-/* --- MODAL (POPUP) STYLES --- */
 .modal-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -125,7 +119,7 @@
 .modal-content {
     background: var(--white);
     width: 90%;
-    max-width: 600px; /* Made modal slightly wider for columns */
+    max-width: 650px; 
     padding: 40px;
     border-radius: 12px;
     position: relative;
@@ -170,23 +164,30 @@
     font-weight: 700;
 }
 
-/* --- ADDED: TWO COLUMN TEXT LAYOUT --- */
 .modal-desc {
     color: #555;
     font-size: 0.95rem;
-    line-height: 1.8;
-    white-space: pre-line; 
-    text-align: left; /* Left align looks better in columns */
-    column-count: 2; /* Forces text into 2 columns! */
-    column-gap: 30px; /* Space between the two columns */
-    padding: 0 20px;
+    line-height: 1.6;
+    text-align: left;
 }
 
-/* Stack to 1 column on small phones */
+/* Perfect two column grid for lists */
+.modal-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 30px;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.modal-list li {
+    color: #555;
+    font-size: 0.95rem;
+}
+
 @media (max-width: 600px) {
-    .modal-desc {
-        column-count: 1; 
-        text-align: center;
+    .modal-list {
+        grid-template-columns: 1fr; 
     }
 }
 </style>
@@ -219,117 +220,98 @@
 <section class="carousel-container">
     <div class="carousel" id="roster">
         
-        <div class="logo-card" 
-             data-title="Lamoiyan Corporation - 1993" 
-             data-desc="Hapee Toothpaste
-                Hapee Kiddie Toothgel
-                Kutitap Toothpaste
-                Dazz Dishwashing Paste and Liquid
-                Dewdrops Dishwashing Liquid
-                Dewdrops All Purpose Cleaner
-                Dewdrops Hand Wash
-                Hapee Gumtect
-                Licealiz Shampoo
-                Yoda Dog Shampoo"
-             data-img="lamoiyan.png">
+        <div class="logo-card" data-title="Lamoiyan Corporation - 1993" data-img="template.png">
             <img src="lamoiyan.png" alt="Lamoiyan Corporation">
             <h3>Lamoiyan Corporation</h3>
+            
+            <div class="hidden-desc" style="display: none;">
+                <p style="font-weight: 600; color: var(--dark-green); margin-bottom: 5px;">Product Lines:</p>
+                <ul class="modal-list">
+                    <li>Hapee Toothpaste</li>
+                    <li>Hapee Kiddie Toothgel</li>
+                    <li>Kutitap Toothpaste</li>
+                    <li>Dazz Dishwashing Paste and Liquid</li>
+                    <li>Dewdrops Dishwashing Liquid</li>
+                    <li>Dewdrops All Purpose Cleaner</li>
+                    <li>Dewdrops Hand Wash</li>
+                    <li>Hapee Gumtect</li>
+                    <li>Licealiz Shampoo</li>
+                    <li>Yoda Dog Shampoo</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="logo-card" 
-             data-title="Lamoiyan Corporation" 
-             data-desc="The proud makers of Hapee Toothpaste, Lamoiyan Corporation is a 100% Filipino-owned company dedicated to providing affordable oral care products for every family."
-             data-img="template.png">
+        <div class="logo-card" data-title="Lamoiyan Corporation" data-img="template.png">
             <img src="template.png" alt="Lamoiyan Corporation">
             <h3>Lamoiyan Corp.</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p>The proud makers of Hapee Toothpaste, Lamoiyan Corporation is a 100% Filipino-owned company dedicated to providing affordable oral care products for every family.</p>
+            </div>
         </div>
 
-        <div class="logo-card" 
-             data-title="Permex Producer & Exporter" 
-             data-desc="Permex is a leading producer of premium canned goods, including Paradiso Sardines and Tuna. Their commitment to quality ensures the freshest catch in every can."
-             data-img="template.png">
+        <div class="logo-card" data-title="Permex Producer & Exporter" data-img="template.png">
             <img src="template.png" alt="Permex">
             <h3>Permex</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p>Permex is a leading producer of premium canned goods, including Paradiso Sardines and Tuna. Their commitment to quality ensures the freshest catch in every can.</p>
+            </div>
         </div>
 
-        <div class="logo-card" 
-             data-title="LG Goods Corporation" 
-             data-desc="LG Goods Corporation specializes in delicious, high-quality biscuits and snacks. They have been a staple in households for decades, providing comfort in every bite."
-             data-img="template.png">
+        <div class="logo-card" data-title="LG Goods Corporation" data-img="template.png">
             <img src="template.png" alt="LG Goods">
             <h3>LG Goods Corp.</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p>LG Goods Corporation specializes in delicious, high-quality biscuits and snacks. They have been a staple in households for decades, providing comfort in every bite.</p>
+            </div>
         </div>
 
-        <div class="logo-card" 
-             data-title="MV Foods Corporation" 
-             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
-             data-img="template.png">
+        <div class="logo-card" data-title="MV Foods Corporation" data-img="template.png">
             <img src="template.png" alt="MV Foods">
             <h3>MV Foods Corp.</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p>Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country.</p>
+            </div>
         </div>
 
-        <div class="logo-card" 
-             data-title="Brand Name 6" 
-             data-desc="Description for Brand 6 will go here. You can add the company history or the products you distribute for them."
-             data-img="template.png">
+        <div class="logo-card" data-title="Brand Name 6" data-img="template.png">
             <img src="template.png" alt="Brand 6">
             <h3>Brand Name 6</h3>
+            <div class="hidden-desc" style="display: none;"><p>Description for Brand 6 will go here.</p></div>
         </div>
-
-        <div class="logo-card" 
-             data-title="Brand Name 7" 
-             data-desc="Description for Brand 7 will go here. You can add the company history or the products you distribute for them."
-             data-img="template.png">
+        <div class="logo-card" data-title="Brand Name 7" data-img="template.png">
             <img src="template.png" alt="Brand 7">
             <h3>Brand Name 7</h3>
+            <div class="hidden-desc" style="display: none;"><p>Description for Brand 7 will go here.</p></div>
         </div>
-
-        <div class="logo-card" 
-             data-title="Brand Name 8" 
-             data-desc="Description for Brand 8 will go here. You can add the company history or the products you distribute for them."
-             data-img="template.png">
+        <div class="logo-card" data-title="Brand Name 8" data-img="template.png">
             <img src="template.png" alt="Brand 8">
             <h3>Brand Name 8</h3>
+            <div class="hidden-desc" style="display: none;"><p>Description for Brand 8 will go here.</p></div>
         </div>
-
-        <div class="logo-card" 
-             data-title="Brand Name 9" 
-             data-desc="Description for Brand 9 will go here. You can add the company history or the products you distribute for them."
-             data-img="template.png">
+        <div class="logo-card" data-title="Brand Name 9" data-img="template.png">
             <img src="template.png" alt="Brand 9">
             <h3>Brand Name 9</h3>
+            <div class="hidden-desc" style="display: none;"><p>Description for Brand 9 will go here.</p></div>
         </div>
-
-        <div class="logo-card" 
-             data-title="Brand Name 10" 
-             data-desc="Description for Brand 10 will go here. You can add the company history or the products you distribute for them."
-             data-img="template.png">
+        <div class="logo-card" data-title="Brand Name 10" data-img="template.png">
             <img src="template.png" alt="Brand 10">
             <h3>Brand Name 10</h3>
+            <div class="hidden-desc" style="display: none;"><p>Description for Brand 10 will go here.</p></div>
         </div>
-
-        <div class="logo-card" 
-             data-title="Brand Name 11" 
-             data-desc="Description for Brand 11 will go here. You can add the company history or the products you distribute for them."
-             data-img="template.png">
+        <div class="logo-card" data-title="Brand Name 11" data-img="template.png">
             <img src="template.png" alt="Brand 11">
             <h3>Brand Name 11</h3>
+            <div class="hidden-desc" style="display: none;"><p>Description for Brand 11 will go here.</p></div>
         </div>
-
-        <div class="logo-card" 
-             data-title="Brand Name 12" 
-             data-desc="Description for Brand 12 will go here. You can add the company history or the products you distribute for them."
-             data-img="template.png">
+        <div class="logo-card" data-title="Brand Name 12" data-img="template.png">
             <img src="template.png" alt="Brand 12">
             <h3>Brand Name 12</h3>
+            <div class="hidden-desc" style="display: none;"><p>Description for Brand 12 will go here.</p></div>
         </div>
-
-        <div class="logo-card" 
-             data-title="Brand Name 13" 
-             data-desc="Description for Brand 13 will go here. You can add the company history or the products you distribute for them."
-             data-img="template.png">
+        <div class="logo-card" data-title="Brand Name 13" data-img="template.png">
             <img src="template.png" alt="Brand 13">
             <h3>Brand Name 13</h3>
+            <div class="hidden-desc" style="display: none;"><p>Description for Brand 13 will go here.</p></div>
         </div>
 
     </div>
@@ -340,12 +322,11 @@
         <button class="close-btn" id="closeModal">&times;</button>
         <img src="" alt="Company Logo" class="modal-logo" id="modalLogo">
         <h2 class="modal-title" id="modalTitle">Company Name</h2>
-        <p class="modal-desc" id="modalDesc">Company description will appear here.</p>
+        <div class="modal-desc" id="modalDesc">Company description will appear here.</div>
     </div>
 </div>
 
 <script>
-    // --- 1. CLICK AND DRAG LOGIC ---
     const roster = document.getElementById('roster');
     let isDown = false;
     let startX;
@@ -376,7 +357,6 @@
         roster.scrollLeft = scrollLeft - walk;
     });
 
-    // --- 2. SMOOTH MOUSE WHEEL LOGIC ---
     roster.addEventListener('wheel', (evt) => {
         const atLeftEdge = roster.scrollLeft === 0;
         const atRightEdge = roster.scrollLeft + roster.clientWidth >= roster.scrollWidth - 1;
@@ -391,7 +371,6 @@
         }
     });
 
-    // --- 3. MODAL LOGIC ---
     const cards = document.querySelectorAll('.logo-card');
     const modal = document.getElementById('principalModal');
     const closeModalBtn = document.getElementById('closeModal');
@@ -408,12 +387,14 @@
             }
 
             const title = card.getAttribute('data-title');
-            const desc = card.getAttribute('data-desc');
             const imgSrc = card.getAttribute('data-img');
+            // GRAB HTML DIRECTLY FROM THE HIDDEN DIV
+            const descHTML = card.querySelector('.hidden-desc').innerHTML;
 
             modalTitle.textContent = title;
-            modalDesc.textContent = desc;
             modalLogo.src = imgSrc;
+            // INSERT THE PERFECT HTML DIRECTLY
+            modalDesc.innerHTML = descHTML;
 
             modal.classList.add('active');
         });
