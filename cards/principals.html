@@ -125,7 +125,7 @@
 .modal-content {
     background: var(--white);
     width: 90%;
-    max-width: 500px;
+    max-width: 600px; /* Made modal slightly wider for columns */
     padding: 40px;
     border-radius: 12px;
     position: relative;
@@ -158,7 +158,7 @@
 }
 
 .modal-logo {
-    max-height: 100px; /* Slightly larger in modal */
+    max-height: 100px; 
     margin-bottom: 20px;
     object-fit: contain;
 }
@@ -166,15 +166,28 @@
 .modal-title {
     font-size: 1.8rem;
     color: var(--dark-green);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
+/* --- ADDED: TWO COLUMN TEXT LAYOUT --- */
 .modal-desc {
     color: #555;
-    font-size: 1rem;
-    line-height: 1.7;
-    white-space: pre-line; /* Keeps your list formatted properly! */
+    font-size: 0.95rem;
+    line-height: 1.8;
+    white-space: pre-line; 
+    text-align: left; /* Left align looks better in columns */
+    column-count: 2; /* Forces text into 2 columns! */
+    column-gap: 30px; /* Space between the two columns */
+    padding: 0 20px;
+}
+
+/* Stack to 1 column on small phones */
+@media (max-width: 600px) {
+    .modal-desc {
+        column-count: 1; 
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -208,8 +221,7 @@
         
         <div class="logo-card" 
              data-title="Lamoiyan Corporation - 1993" 
-             data-desc="Product Lines:
-                Hapee Toothpaste
+             data-desc="Hapee Toothpaste
                 Hapee Kiddie Toothgel
                 Kutitap Toothpaste
                 Dazz Dishwashing Paste and Liquid
