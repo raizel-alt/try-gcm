@@ -36,72 +36,71 @@
 .carousel {
     display: flex;
     overflow-x: auto;
-    gap: 20px;
+    gap: 25px; /* Increased gap */
     padding: 30px 10%;
     cursor: grab; 
     user-select: none; 
+    /* Hides scrollbar for a cleaner look */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+}
+
+.carousel::-webkit-scrollbar { 
+    display: none; 
 }
 
 .carousel:active {
     cursor: grabbing;
 }
 
-.carousel::-webkit-scrollbar {
-    height: 10px;
-}
-.carousel::-webkit-scrollbar-track {
-    background: rgba(46, 139, 87, 0.1); 
-    border-radius: 10px;
-    margin: 0 10%;
-}
-.carousel::-webkit-scrollbar-thumb {
-    background: var(--gold); 
-    border-radius: 10px;
-}
-.carousel::-webkit-scrollbar-thumb:hover {
-    background: var(--dark-green); 
-}
-
-/* The Logo Cards (Hero Selection Slots) */
+/* --- THE UPDATED CARD LAYOUT --- */
 .logo-card {
     flex: 0 0 auto;
-    width: 220px;
-    height: 280px;
+    width: 280px;  /* Wider */
+    height: 350px; /* Taller */
     background: var(--white);
-    border: 2px solid #eaeaea;
-    border-radius: 12px;
+    border-radius: 15px; /* Softer edges */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     position: relative;
-    padding: 20px;
+    padding: 30px 20px;
     pointer-events: auto; 
 }
 
 .logo-card img {
-    max-width: 100%;
-    max-height: 120px;
+    width: 100%;
+    max-height: 180px; /* Larger image area */
     object-fit: contain;
-    transition: all 0.3s ease;
-    margin-bottom: 15px;
+    transition: all 0.4s ease;
+    margin-bottom: 25px;
     pointer-events: none; 
+    filter: grayscale(20%) opacity(0.9); /* Subtle dim effect */
 }
 
 .logo-card h3 {
-    font-size: 1rem;
+    font-size: 1.2rem; /* Larger font */
     color: var(--dark-green);
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
     pointer-events: none;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
+/* Updated Hover Effect */
 .logo-card:hover {
-    transform: scale(1.08) translateY(-10px);
-    border-color: var(--gold);
-    box-shadow: 0 15px 30px rgba(197, 160, 77, 0.3);
-    z-index: 10;
+    transform: translateY(-15px); /* Higher lift */
+    box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15); /* Greenish shadow */
+}
+
+.logo-card:hover img {
+    filter: grayscale(0%) opacity(1); /* Full color on hover */
+    transform: scale(1.05); /* Slight zoom */
 }
 
 /* --- MODAL (POPUP) STYLES --- */
@@ -159,8 +158,9 @@
 }
 
 .modal-logo {
-    max-height: 80px;
+    max-height: 100px; /* Slightly larger in modal */
     margin-bottom: 20px;
+    object-fit: contain;
 }
 
 .modal-title {
@@ -174,6 +174,7 @@
     color: #555;
     font-size: 1rem;
     line-height: 1.7;
+    white-space: pre-line; /* Keeps your list formatted properly! */
 }
 </style>
 </head>
