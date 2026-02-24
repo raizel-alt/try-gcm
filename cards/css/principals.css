@@ -1,1 +1,192 @@
+.page-header {
+    text-align: center;
+    padding: 60px 10% 20px;
+}
 
+.page-header h1 {
+    font-size: 2.8rem;
+    color: var(--dark-green);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.page-header p {
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.carousel-container {
+    width: 100%;
+    padding: 20px 0 80px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 25px; 
+    padding: 30px 10%;
+    cursor: grab; 
+    user-select: none; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+}
+
+.carousel::-webkit-scrollbar { 
+    display: none; 
+}
+
+.carousel:active {
+    cursor: grabbing;
+}
+
+.logo-card {
+    flex: 0 0 auto;
+    width: 280px;  
+    height: 350px; 
+    background: var(--white);
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    position: relative;
+    padding: 30px 20px;
+    pointer-events: auto; 
+}
+
+.logo-card img {
+    width: 100%;
+    max-height: 180px; 
+    object-fit: contain;
+    transition: all 0.4s ease;
+    margin-bottom: 25px;
+    pointer-events: none; 
+    filter: grayscale(20%) opacity(0.9); 
+}
+
+.logo-card h3 {
+    font-size: 1.2rem; 
+    color: var(--dark-green);
+    text-align: center;
+    font-weight: 700;
+    pointer-events: none;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.logo-card:hover {
+    transform: translateY(-15px); 
+    box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15); 
+}
+
+.logo-card:hover img {
+    filter: grayscale(0%) opacity(1); 
+    transform: scale(1.05); 
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 61, 46, 0.85); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--white);
+    width: 90%;
+    max-width: 650px; 
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border-top: 6px solid var(--gold);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--dark-green);
+}
+
+.modal-logo {
+    max-height: 100px; 
+    margin-bottom: 20px;
+    object-fit: contain;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.modal-desc {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
+    
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    column-gap: 40px; 
+    
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.modal-desc ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.modal-desc li {
+    margin-bottom: 8px;
+    break-inside: avoid-column; 
+    page-break-inside: avoid;
+}
+
+.modal-desc p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 450px) {
+    .modal-desc {
+        column-count: 1; 
+    }
+}
