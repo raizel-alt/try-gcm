@@ -1,87 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GCM | PERMANENT RGB CHAOS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCM | Our Principals</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            margin: 0; 
-            overflow-x: hidden;
-            animation: rgbStrobe 0.15s steps(1) infinite !important;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" style="font-size: 24px;"><text y="24">🔥</text></svg>'), auto;
-        }
-
-        @keyframes rgbStrobe {
-            0% { background-color: #ff0000; }
-            20% { background-color: #00ff00; }
-            40% { background-color: #0000ff; }
-            60% { background-color: #ffff00; }
-            80% { background-color: #ff00ff; }
-            100% { background-color: #00ffff; }
-        }
-
-        .top-nav { background: #333; color: white; display: flex; justify-content: space-between; padding: 10px 5%; font-size: 0.8rem; }
-        
-        header { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 20px 5%; 
-            background: #fff; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-            position: relative; 
-            z-index: 10;
-            animation: shake 0.1s infinite;
-        }
-        
-        .site-logo { height: 50px; }
-        nav { display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: #333; font-weight: 900; text-transform: uppercase; }
-        
-        .page-header { 
-            padding: 60px 0; 
-            text-align: center; 
-            animation: shake 0.12s infinite;
-        }
-        .page-header h1 { font-size: 5rem; color: white; -webkit-text-stroke: 2px black; }
-
-        .carousel-container { padding: 50px 0; overflow: hidden; position: relative; }
-        .carousel { display: flex; gap: 60px; padding: 100px 5%; overflow-x: auto; scroll-behavior: smooth; }
-        .carousel::-webkit-scrollbar { display: none; }
-        
-        .logo-card { 
-            min-width: 250px; 
-            background: white; 
-            padding: 20px; 
-            border-radius: 0px; 
-            border: 5px solid black;
-            box-shadow: 15px 15px 0px rgba(0,0,0,1); 
-            text-align: center; 
-            flex-shrink: 0;
-            /* Constant Spinning */
-            animation: ultraSpin 0.4s linear infinite !important;
-        }
-        
-        @keyframes ultraSpin {
-            from { transform: rotate(0deg) scale(1.1); }
-            to { transform: rotate(360deg) scale(1.1); }
-        }
-
-        @keyframes shake {
-            0% { transform: translate(2px, 2px) rotate(0deg); }
-            50% { transform: translate(-2px, -3px) rotate(-2deg); }
-            100% { transform: translate(2px, 2px) rotate(0deg); }
-        }
-        .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.9); display:none; justify-content:center; align-items:center; z-index:20000; }
-        .modal-overlay.active { display:flex; }
-        .modal-content { background:black; color: lime; padding:40px; border: 10px dashed red; max-width:500px; text-align: center; }
-        .close-btn { position:absolute; top:10px; right:20px; font-size:40px; color: red; cursor:pointer; background:none; border:none; }
-    </style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/about.css">
+<link rel="stylesheet" href="css/principals.css">
 </head>
 
 <body>
@@ -92,75 +18,376 @@
 </div>
 
 <header>
-    <a href="#"><div style="font-weight: 900; font-size: 2.5rem; color: red;">GCM!!!</div></a>
+    <a href="../index.html">
+        <img src="../GCMLogo.png" alt="GCM Logo" class="site-logo">
+    </a>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <div class="nav-item"><a href="../index.html">Home</a></div>
+        <div class="nav-item"><a href="../about.html">About Us</a></div>
+        <div class="nav-item"><a href="../services.html">Services</a></div>
+        <div class="nav-item"><a href="../contact.html">Contact Us</a></div>
     </nav>
 </header>
 
 <div class="page-header">
-    <h1>PRINCIPALS</h1>
+    <h1>Our Principals</h1>
 </div>
 
 <section class="carousel-container">
     <div class="carousel" id="roster">
-        <div class="logo-card" data-title="Lamoiyan Corporation">
-            <div style="font-size: 60px;">🦷</div>
-            <h3>Lamoiyan</h3>
+        
+        <div class="logo-card" data-title="Lamoiyan Corporation - 1993" data-img="template.png">
+            <img src="lamoiyan.png" alt="Lamoiyan Corporation">
+            <h3>Lamoiyan Corporation</h3>
+            
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Hapee Toothpaste</li>
+                    <li>Hapee Kiddie Toothgel</li>
+                    <li>Kutitap Toothpaste</li>
+                    <li>Dazz Dishwashing Paste and Liquid</li>
+                    <li>Dewdrops Dishwashing Liquid</li>
+                    <li>Dewdrops All Purpose Cleaner</li>
+                    <li>Dewdrops Hand Wash</li>
+                    <li>Hapee Gumtect</li>
+                    <li>Licealiz Shampoo</li>
+                    <li>Yoda Dog Shampoo</li>
+                </ul>
+
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Km. 15 West Service Road,<br>
+                    South Superhighway,
+                    Parañaque, Metro Manila
+                    Tel. # (02) 823-8072
+                    Supplier since 1994
+                </div>
+            </div>
         </div>
-        <div class="logo-card" data-title="Unitrade Merchandise">
-            <div style="font-size: 60px;">👶</div>
-            <h3>Unitrade</h3>
+
+        <div class="logo-card" data-title="Unitrade Merchandise, INC." data-img="jsu.png">
+            <img src="jsu.png" alt="Unitrade Merchandise, INC.">
+            <h3>Unitrade Merchandise, INC.</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>EQ Baby Diapers(Plus,Dry,Colors,Pants)</li>
+                    <li>Genius Grow Up Pants</li>
+                    <li>Caress Unisex Adult Diapers</li>
+                    <li>Secure Pull-up Adult Diapers</li>
+                    <li>Hi-Pants Adult Underwear</li>
+                    <li>Charmee Sanitary Napkins, Pantyliners & Feminine Wipes</li>
+                    <li>Nursy Baby Wipes</li>
+                    <li>Hapee Gumtect</li>
+                    <li>Kitchenmate Multi Purpose Kitchen Towel</li>
+                    <li>Tidy Inter-folded Paper Towel</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    31’s Floor Raffles Corporate Center,<br>
+                    Emerald Avenue, Ortegas Center
+                    Pasig City, Metro Manila
+                    Tel. # (02) 916-111
+                    Supplier since 1997
+                </div>
+            </div>
         </div>
-        <div class="logo-card" data-title="Regent Food Corp">
-            <div style="font-size: 60px;">🥨</div>
-            <h3>Regent</h3>
+
+        <div class="logo-card" data-title="Regent Food Corporation" data-img="template.png">
+            <img src="template.png" alt="Regent Food Corporation">
+            <h3>Regent Food Corp.</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Regent Snack Products</li>
+                    <li>Biscuits and Cakes</li>
+                    <li>Other Regent Food Lines</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                        80 Elisco Road,<br>
+                        Barrio Kalawaan Sur
+                        Pasig City, Metro Manila
+                        Tel. # (02) 641-5388
+                        Supplier since 1994
+                </div>
+            </div>
         </div>
-        <div class="logo-card" data-title="LG Goods">
-            <div style="font-size: 60px;">🍪</div>
-            <h3>LG Goods</h3>
+
+        <div class="logo-card" data-title="LG Goods Corporation" data-img="template.png">
+            <img src="template.png" alt="LG Goods">
+            <h3>LG Goods Corp.</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>High Quality Biscuits</li>
+                    <li>Assorted Snacks</li>
+                    <li>Other LG Products</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    LG Goods Address Line 1<br>
+                    LG Goods Address Line 2
+                </div>
+            </div>
         </div>
-        <div class="logo-card" data-title="MV Foods">
-            <div style="font-size: 60px;">🧃</div>
-            <h3>MV Foods</h3>
+
+        <div class="logo-card" data-title="MV Foods Corporation" data-img="template.png">
+            <img src="template.png" alt="MV Foods">
+            <h3>MV Foods Corp.</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Richie Juices</li>
+                    <li>Fruit-Flavored Beverages</li>
+                    <li>Other MV Foods Products</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    MV Foods Address Line 1<br>
+                    MV Foods Address Line 2
+                </div>
+            </div>
         </div>
+
+        <div class="logo-card" data-title="Brand Name 6" data-img="template.png">
+            <img src="template.png" alt="Brand 6">
+            <h3>Brand Name 6</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Product Line 1</li>
+                    <li>Product Line 2</li>
+                    <li>Product Line 3</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 6 Address Line 1<br>
+                    Brand 6 Address Line 2
+                </div>
+            </div>
+        </div>
+        
+        <div class="logo-card" data-title="Brand Name 7" data-img="template.png">
+            <img src="template.png" alt="Brand 7">
+            <h3>Brand Name 7</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Product Line 1</li>
+                    <li>Product Line 2</li>
+                    <li>Product Line 3</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 7 Address Line 1<br>
+                    Brand 7 Address Line 2
+                </div>
+            </div>
+        </div>
+        
+        <div class="logo-card" data-title="Brand Name 8" data-img="template.png">
+            <img src="template.png" alt="Brand 8">
+            <h3>Brand Name 8</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Product Line 1</li>
+                    <li>Product Line 2</li>
+                    <li>Product Line 3</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 8 Address Line 1<br>
+                    Brand 8 Address Line 2
+                </div>
+            </div>
+        </div>
+        
+        <div class="logo-card" data-title="Brand Name 9" data-img="template.png">
+            <img src="template.png" alt="Brand 9">
+            <h3>Brand Name 9</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Product Line 1</li>
+                    <li>Product Line 2</li>
+                    <li>Product Line 3</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 9 Address Line 1<br>
+                    Brand 9 Address Line 2
+                </div>
+            </div>
+        </div>
+        
+        <div class="logo-card" data-title="Brand Name 10" data-img="template.png">
+            <img src="template.png" alt="Brand 10">
+            <h3>Brand Name 10</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Product Line 1</li>
+                    <li>Product Line 2</li>
+                    <li>Product Line 3</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 10 Address Line 1<br>
+                    Brand 10 Address Line 2
+                </div>
+            </div>
+        </div>
+        
+        <div class="logo-card" data-title="Brand Name 11" data-img="template.png">
+            <img src="template.png" alt="Brand 11">
+            <h3>Brand Name 11</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Product Line 1</li>
+                    <li>Product Line 2</li>
+                    <li>Product Line 3</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 11 Address Line 1<br>
+                    Brand 11 Address Line 2
+                </div>
+            </div>
+        </div>
+        
+        <div class="logo-card" data-title="Brand Name 12" data-img="template.png">
+            <img src="template.png" alt="Brand 12">
+            <h3>Brand Name 12</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Product Line 1</li>
+                    <li>Product Line 2</li>
+                    <li>Product Line 3</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 12 Address Line 1<br>
+                    Brand 12 Address Line 2
+                </div>
+            </div>
+        </div>
+        
+        <div class="logo-card" data-title="Brand Name 13" data-img="template.png">
+            <img src="template.png" alt="Brand 13">
+            <h3>Brand Name 13</h3>
+            <div class="hidden-desc" style="display: none;">
+                <p><strong>Product Lines:</strong></p>
+                <ul>
+                    <li>Product Line 1</li>
+                    <li>Product Line 2</li>
+                    <li>Product Line 3</li>
+                </ul>
+                <div style="column-span: all; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ddd;">
+                    <strong>Address:</strong><br>
+                    Brand 13 Address Line 1<br>
+                    Brand 13 Address Line 2
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
 <div class="modal-overlay" id="principalModal">
     <div class="modal-content">
         <button class="close-btn" id="closeModal">&times;</button>
-        <h2 id="modalTitle">Company Name</h2>
-        <p>CONGRATULATIONS! YOU CLICKED A SPINNING CARD!</p>
+        <img src="" alt="Company Logo" class="modal-logo" id="modalLogo">
+        <h2 class="modal-title" id="modalTitle">Company Name</h2>
+        <div class="modal-desc" id="modalDesc">Company description will appear here.</div>
     </div>
 </div>
 
 <script>
     const roster = document.getElementById('roster');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let isDragging = false; 
+
+    roster.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragging = false; 
+        startX = e.pageX - roster.offsetLeft;
+        scrollLeft = roster.scrollLeft;
+    });
+
+    roster.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+
+    roster.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+
+    roster.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        isDragging = true; 
+        const x = e.pageX - roster.offsetLeft;
+        const walk = (x - startX) * 1.5; 
+        roster.scrollLeft = scrollLeft - walk;
+    });
+
+    roster.addEventListener('wheel', (evt) => {
+        const atLeftEdge = roster.scrollLeft <= 0;
+        const atRightEdge = roster.scrollLeft + roster.clientWidth >= roster.scrollWidth - 1;
+
+        if (evt.deltaY > 0 && !atRightEdge) {
+            evt.preventDefault();
+            roster.scrollBy({ left: evt.deltaY * 2.5, behavior: 'smooth' });
+        } 
+        else if (evt.deltaY < 0 && !atLeftEdge) {
+            evt.preventDefault();
+            roster.scrollBy({ left: evt.deltaY * 2.5, behavior: 'smooth' });
+        }
+    });
+
+    const cards = document.querySelectorAll('.logo-card');
     const modal = document.getElementById('principalModal');
     const closeModalBtn = document.getElementById('closeModal');
-    const cards = document.querySelectorAll('.logo-card');
+    
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalLogo = document.getElementById('modalLogo');
 
-    // Auto-scroll the carousel for extra chaos
-    setInterval(() => {
-        roster.scrollLeft += 5;
-        if (roster.scrollLeft >= (roster.scrollWidth - roster.clientWidth)) {
-            roster.scrollLeft = 0;
-        }
-    }, 20);
-
-    // Modal logic
     cards.forEach(card => {
-        card.addEventListener('click', () => {
-            document.getElementById('modalTitle').innerText = card.dataset.title;
+        card.addEventListener('click', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                return;
+            }
+
+            const title = card.getAttribute('data-title');
+            const imgSrc = card.getAttribute('data-img');
+            const descHTML = card.querySelector('.hidden-desc').innerHTML;
+
+            modalTitle.textContent = title;
+            modalLogo.src = imgSrc;
+            modalDesc.innerHTML = descHTML;
+
             modal.classList.add('active');
         });
     });
 
-    closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+    closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
 </script>
 
 </body>
