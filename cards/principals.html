@@ -3,229 +3,182 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GCM | Contact Us</title>
+<title>GCM | Our Principals</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/about.css">
 
 <style>
-:root {
-    --dark-green: #2E8B57;
-    --medium-green: #1f5e46;
-    --light-green: #e9f2ec;
-    --gold: #c5a04d;
-    --soft-bg: #ffffff;
-    --text-dark: #333333;
-    --border-color: #cccccc;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--soft-bg);
-    color: var(--text-dark);
-}
-
-/* Navigation */
-.top-nav {
-    background: var(--dark-green);
-    color: #ffffff;
-    padding: 8px 8%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-}
-
-header {
-    background: #ffffff;
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.site-logo { max-height: 65px; }
-
-nav { display: flex; }
-.nav-item { margin-left: 35px; }
-
-.nav-item a {
-    text-decoration: none;
-    color: var(--dark-green);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.nav-item a:hover, .nav-item.active a { color: var(--gold); }
-
-/* Main Contact Layout */
-.page-title {
+/* --- SPECIFIC STYLES FOR PRINCIPALS PAGE --- */
+.page-header {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
+    padding: 60px 10% 20px;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
     color: var(--dark-green);
-    margin: 50px 0 20px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-/* Changed main container to stack form on top of details if needed, 
-   or keep side-by-side depending on space. 
-   We will stack them so the 2-column address has plenty of room to breathe! */
-.contact-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5% 80px;
-    display: flex;
-    flex-direction: column; /* Stack vertically so details have full width */
-    gap: 60px;
+.page-header p {
+    color: #555;
+    font-size: 1.05rem;
 }
 
-/* --- THE FORM SECTION --- */
-.form-section {
+/* --- DOTA 2 STYLE HORIZONTAL CAROUSEL --- */
+.carousel-container {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto; /* Centers the form */
+    padding: 20px 0 80px;
 }
 
-/* Let's put City and Country side-by-side to save space too! */
-.form-row {
+.carousel {
     display: flex;
-    gap: 20px;
-}
-.form-row .form-group {
-    flex: 1;
+    overflow-x: auto;
+    gap: 25px; /* Increased gap */
+    padding: 30px 10%;
+    cursor: grab; 
+    user-select: none; 
+    /* Hides scrollbar for a cleaner look */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
 }
 
-.form-group {
-    margin-bottom: 25px;
+.carousel::-webkit-scrollbar { 
+    display: none; 
+}
+
+.carousel:active {
+    cursor: grabbing;
+}
+
+/* --- THE UPDATED CARD LAYOUT --- */
+.logo-card {
+    flex: 0 0 auto;
+    width: 280px;  /* Wider */
+    height: 350px; /* Taller */
+    background: var(--white);
+    border-radius: 15px; /* Softer edges */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    position: relative;
+    padding: 30px 20px;
+    pointer-events: auto; 
 }
 
-.form-group label {
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    color: var(--text-dark);
-}
-
-.form-group label span {
-    color: red; 
-}
-
-.form-group input, 
-.form-group textarea {
+.logo-card img {
     width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 0.95rem;
-    background: #fdfdfd;
-    transition: border-color 0.3s ease;
-    outline: none;
-    resize: vertical;
+    max-height: 180px; /* Larger image area */
+    object-fit: contain;
+    transition: all 0.4s ease;
+    margin-bottom: 25px;
+    pointer-events: none; 
+    filter: grayscale(20%) opacity(0.9); /* Subtle dim effect */
 }
 
-.form-group input:focus, 
-.form-group textarea:focus {
-    border-color: var(--dark-green);
-}
-
-.submit-btn {
-    background: var(--dark-green);
-    color: #ffffff;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.3s ease;
-    width: 100%; /* Makes button full width */
-}
-
-.submit-btn:hover {
-    background: var(--medium-green);
-}
-
-.success-message {
-    display: none;
-    background: var(--light-green);
+.logo-card h3 {
+    font-size: 1.2rem; /* Larger font */
     color: var(--dark-green);
-    padding: 15px;
-    border-radius: 4px;
+    text-align: center;
+    font-weight: 700;
+    pointer-events: none;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Updated Hover Effect */
+.logo-card:hover {
+    transform: translateY(-15px); /* Higher lift */
+    box-shadow: 0 20px 40px rgba(46, 139, 87, 0.15); /* Greenish shadow */
+}
+
+.logo-card:hover img {
+    filter: grayscale(0%) opacity(1); /* Full color on hover */
+    transform: scale(1.05); /* Slight zoom */
+}
+
+/* --- MODAL (POPUP) STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 61, 46, 0.85); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--white);
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border-top: 6px solid var(--gold);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--dark-green);
+}
+
+.modal-logo {
+    max-height: 100px; /* Slightly larger in modal */
     margin-bottom: 20px;
-    font-weight: 500;
-    border-left: 4px solid var(--dark-green);
+    object-fit: contain;
 }
 
-/* --- THE 2-COLUMN ADDRESS SECTION --- */
-.details-section {
-    width: 100%;
-    border-top: 1px solid #eee;
-    padding-top: 50px;
-}
-
-.address-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* This splits it into exactly 2 columns */
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.details-block h3 {
-    font-size: 1.2rem;
+.modal-title {
+    font-size: 1.8rem;
     color: var(--dark-green);
     margin-bottom: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 10px;
-    display: inline-block;
+    font-weight: 700;
 }
 
-.details-block p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: #555555;
-}
-
-.details-block strong {
-    color: var(--text-dark);
-    font-weight: 600;
-}
-
-.details-block a {
-    color: var(--dark-green);
-    text-decoration: none;
-}
-
-.details-block a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .address-grid {
-        grid-template-columns: 1fr; /* Stacks to 1 column on small phone screens */
-    }
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
+.modal-desc {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    white-space: pre-line; /* Keeps your list formatted properly! */
 }
 </style>
 </head>
+
 <body>
 
 <div class="top-nav">
@@ -234,121 +187,234 @@ nav { display: flex; }
 </div>
 
 <header>
-    <a href="index.html">
-        <img src="GCMLogo.png" alt="GCM Logo" class="site-logo">
+    <a href="../index.html">
+        <img src="../GCMLogo.png" alt="GCM Logo" class="site-logo">
     </a>
     <nav>
-        <div class="nav-item"><a href="index.html">Home</a></div>
-        <div class="nav-item"><a href="about.html">About Us</a></div>
-        <div class="nav-item"><a href="services.html">Services</a></div>
-        <div class="nav-item active"><a href="contact.html">Contact Us</a></div>
+        <div class="nav-item"><a href="../index.html">Home</a></div>
+        <div class="nav-item"><a href="../about.html">About Us</a></div>
+        <div class="nav-item"><a href="../services.html">Services</a></div>
+        <div class="nav-item"><a href="../contact.html">Contact Us</a></div>
     </nav>
 </header>
 
-<h1 class="page-title">Contact Us</h1>
+<div class="page-header">
+    <h1>Our Principals</h1>
+    <p>Select a partner below to learn more about their company and our collaboration.</p>
+</div>
 
-<section class="contact-container">
-    
-    <div class="form-section">
-        <div id="successMessage" class="success-message">
-            Thank you! Your message has been sent successfully.
+<section class="carousel-container">
+    <div class="carousel" id="roster">
+        
+        <div class="logo-card" 
+             data-title="Lamoiyan Corporation - 1993" 
+             data-desc="Product Lines:
+                Hapee Toothpaste
+                Hapee Kiddie Toothgel
+                Kutitap Toothpaste
+                Dazz Dishwashing Paste and Liquid
+                Dewdrops Dishwashing Liquid
+                Dewdrops All Purpose Cleaner
+                Dewdrops Hand Wash
+                Hapee Gumtect
+                Licealiz Shampoo
+                Yoda Dog Shampoo"
+             data-img="template.png">
+            <img src="lamoiyan.png" alt="Lamoiyan Corporation">
+            <h3>Lamoiyan Corporation</h3>
         </div>
 
-        <form id="contactForm">
-            <div class="form-group">
-                <label>Name <span>*</span></label>
-                <input type="text" id="fullName" required>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-group">
-                    <label>Birthday <span>*</span></label>
-                    <input type="date" id="birthday" required>
-                </div>
-                <div class="form-group">
-                    <label>Contact Number <span>*</span></label>
-                    <input type="tel" id="contactNum" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Email <span>*</span></label>
-                <input type="email" id="emailAdd" required>
-            </div>
-            
-            <div class="form-row">
-                <div class="form-group">
-                    <label>City/Municipality <span>*</span></label>
-                    <input type="text" id="city" required>
-                </div>
-                <div class="form-group">
-                    <label>Country <span>*</span></label>
-                    <input type="text" id="country" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Message <span>*</span></label>
-                <textarea id="messageBox" rows="6" required></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
-        </form>
-    </div>
-
-    <div class="details-section">
-        <div class="address-grid">
-            
-            <div class="details-block">
-                <h3>Corporate Head Office</h3>
-                <p>
-                    <strong>GOLDEN CENTURY MARKETING</strong><br>
-                    Divisoria Street<br>
-                    Cagayan de Oro City, Philippines<br>
-                    Telephone No.: (088) 856 1234
-                </p>
-            </div>
-
-            <div class="details-block">
-                <h3>Customer Care</h3>
-                <p>
-                    For inquiries, orders, and suggestions on our products and services, please write or call:<br><br>
-                    <strong>GOLDEN CENTURY MARKETING</strong><br>
-                    Telephone No.: +63 917 123 4567<br>
-                    Email: <a href="mailto:info@gcmarketing.com.ph">info@gcmarketing.com.ph</a><br>
-                    Sales: <a href="mailto:sales@gcmarketing.com.ph">sales@gcmarketing.com.ph</a>
-                </p>
-            </div>
-
+        <div class="logo-card" 
+             data-title="Lamoiyan Corporation" 
+             data-desc="The proud makers of Hapee Toothpaste, Lamoiyan Corporation is a 100% Filipino-owned company dedicated to providing affordable oral care products for every family."
+             data-img="template.png">
+            <img src="template.png" alt="Lamoiyan Corporation">
+            <h3>Lamoiyan Corp.</h3>
         </div>
-    </div>
 
+        <div class="logo-card" 
+             data-title="Permex Producer & Exporter" 
+             data-desc="Permex is a leading producer of premium canned goods, including Paradiso Sardines and Tuna. Their commitment to quality ensures the freshest catch in every can."
+             data-img="template.png">
+            <img src="template.png" alt="Permex">
+            <h3>Permex</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="LG Goods Corporation" 
+             data-desc="LG Goods Corporation specializes in delicious, high-quality biscuits and snacks. They have been a staple in households for decades, providing comfort in every bite."
+             data-img="template.png">
+            <img src="template.png" alt="LG Goods">
+            <h3>LG Goods Corp.</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="MV Foods Corporation" 
+             data-desc="Makers of the famous Richie Juices. MV Foods Corporation delivers refreshing, fruit-flavored beverages that have been a favorite among consumers across the country."
+             data-img="template.png">
+            <img src="template.png" alt="MV Foods">
+            <h3>MV Foods Corp.</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Brand Name 6" 
+             data-desc="Description for Brand 6 will go here. You can add the company history or the products you distribute for them."
+             data-img="template.png">
+            <img src="template.png" alt="Brand 6">
+            <h3>Brand Name 6</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Brand Name 7" 
+             data-desc="Description for Brand 7 will go here. You can add the company history or the products you distribute for them."
+             data-img="template.png">
+            <img src="template.png" alt="Brand 7">
+            <h3>Brand Name 7</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Brand Name 8" 
+             data-desc="Description for Brand 8 will go here. You can add the company history or the products you distribute for them."
+             data-img="template.png">
+            <img src="template.png" alt="Brand 8">
+            <h3>Brand Name 8</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Brand Name 9" 
+             data-desc="Description for Brand 9 will go here. You can add the company history or the products you distribute for them."
+             data-img="template.png">
+            <img src="template.png" alt="Brand 9">
+            <h3>Brand Name 9</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Brand Name 10" 
+             data-desc="Description for Brand 10 will go here. You can add the company history or the products you distribute for them."
+             data-img="template.png">
+            <img src="template.png" alt="Brand 10">
+            <h3>Brand Name 10</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Brand Name 11" 
+             data-desc="Description for Brand 11 will go here. You can add the company history or the products you distribute for them."
+             data-img="template.png">
+            <img src="template.png" alt="Brand 11">
+            <h3>Brand Name 11</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Brand Name 12" 
+             data-desc="Description for Brand 12 will go here. You can add the company history or the products you distribute for them."
+             data-img="template.png">
+            <img src="template.png" alt="Brand 12">
+            <h3>Brand Name 12</h3>
+        </div>
+
+        <div class="logo-card" 
+             data-title="Brand Name 13" 
+             data-desc="Description for Brand 13 will go here. You can add the company history or the products you distribute for them."
+             data-img="template.png">
+            <img src="template.png" alt="Brand 13">
+            <h3>Brand Name 13</h3>
+        </div>
+
+    </div>
 </section>
 
+<div class="modal-overlay" id="principalModal">
+    <div class="modal-content">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <img src="" alt="Company Logo" class="modal-logo" id="modalLogo">
+        <h2 class="modal-title" id="modalTitle">Company Name</h2>
+        <p class="modal-desc" id="modalDesc">Company description will appear here.</p>
+    </div>
+</div>
+
 <script>
-    const form = document.getElementById('contactForm');
-    const sendBtn = document.getElementById('sendBtn');
-    const successMessage = document.getElementById('successMessage');
+    // --- 1. CLICK AND DRAG LOGIC ---
+    const roster = document.getElementById('roster');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let isDragging = false; 
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+    roster.addEventListener('mousedown', (e) => {
+        isDown = true;
+        isDragging = false; 
+        startX = e.pageX - roster.offsetLeft;
+        scrollLeft = roster.scrollLeft;
+    });
 
-        sendBtn.textContent = "Sending...";
-        sendBtn.style.opacity = "0.7";
-        sendBtn.style.pointerEvents = "none";
+    roster.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
 
-        setTimeout(() => {
-            successMessage.style.display = "block";
-            form.reset();
-            sendBtn.textContent = "Submit";
-            sendBtn.style.opacity = "1";
-            sendBtn.style.pointerEvents = "auto";
+    roster.addEventListener('mouseup', () => {
+        isDown = false;
+    });
 
-            setTimeout(() => {
-                successMessage.style.display = "none";
-            }, 4000);
+    roster.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        isDragging = true; 
+        const x = e.pageX - roster.offsetLeft;
+        const walk = (x - startX) * 1.5; 
+        roster.scrollLeft = scrollLeft - walk;
+    });
 
-        }, 1500);
+    // --- 2. SMOOTH MOUSE WHEEL LOGIC ---
+    roster.addEventListener('wheel', (evt) => {
+        const atLeftEdge = roster.scrollLeft === 0;
+        const atRightEdge = roster.scrollLeft + roster.clientWidth >= roster.scrollWidth - 1;
+
+        if (evt.deltaY > 0 && !atRightEdge) {
+            evt.preventDefault();
+            roster.scrollLeft += evt.deltaY * 1.5;
+        } 
+        else if (evt.deltaY < 0 && !atLeftEdge) {
+            evt.preventDefault();
+            roster.scrollLeft += evt.deltaY * 1.5;
+        }
+    });
+
+    // --- 3. MODAL LOGIC ---
+    const cards = document.querySelectorAll('.logo-card');
+    const modal = document.getElementById('principalModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalLogo = document.getElementById('modalLogo');
+
+    cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (isDragging) {
+                e.preventDefault();
+                return;
+            }
+
+            const title = card.getAttribute('data-title');
+            const desc = card.getAttribute('data-desc');
+            const imgSrc = card.getAttribute('data-img');
+
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalLogo.src = imgSrc;
+
+            modal.classList.add('active');
+        });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
     });
 </script>
 
