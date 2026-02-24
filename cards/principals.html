@@ -38,7 +38,7 @@
         
         <div class="logo-card" data-title="Lamoiyan Corporation - 1993" data-img="template.png">
             <img src="lamoiyan.png" alt="Lamoiyan Corporation">
-            <h3></h3>
+            <h3>Lamoiyan Corp.</h3>
             
             <div class="hidden-desc" style="display: none;">
                 <p><strong>Product Lines:</strong></p>
@@ -68,7 +68,7 @@
 
         <div class="logo-card" data-title="Unitrade Merchandise, INC." data-img="jsu.png">
             <img src="jsu.png" alt="Unitrade Merchandise, INC.">
-            <h3></h3>
+            <h3>Unitrade Merchandise</h3>
             <div class="hidden-desc" style="display: none;">
                 <p><strong>Product Lines:</strong></p>
                 <ul>
@@ -95,10 +95,8 @@
         </div>
 
         <div class="logo-card" data-title="Regent Food Corporation" data-img="regent.png">
-            <div class="img-wrapper">
             <img src="regent.png" alt="Regent Food Corporation">
-            </div>
-            <h3></h3>
+            <h3>Regent Food Corp.</h3>
             <div class="hidden-desc" style="display: none;">
                 <p><strong>Product Lines:</strong></p>
                 <ul>
@@ -124,7 +122,7 @@
 
         <div class="logo-card" data-title="Regal Int’l. Snack Food Corp." data-img="regal.png">
             <img src="regal.png" alt="Regal Int’l. Snack Food Corp.">
-            <h3></h3>
+            <h3>Regal Int'l Snack</h3>
             <div class="hidden-desc" style="display: none;">
                 <p><strong>Product Lines:</strong></p>
                 <ul>
@@ -319,17 +317,29 @@
 </div>
 
 <script>
+    // --- SUPER SMOOTH MOMENTUM SCROLLING SCRIPT ---
     const roster = document.getElementById('roster');
     let isDown = false;
     let startX;
     let scrollLeft;
     let isDragging = false; 
 
+    // Momentum variables
+    let currentScroll = 0;
+    let targetScroll = 0;
+    let ease = 0.08; // The lower the number, the smoother and longer the glide
+    let animationFrame;
+
     roster.addEventListener('mousedown', (e) => {
         isDown = true;
         isDragging = false; 
         startX = e.pageX - roster.offsetLeft;
         scrollLeft = roster.scrollLeft;
+        
+        // Sync custom scrolling with native drag
+        targetScroll = scrollLeft;
+        currentScroll = scrollLeft;
+        cancelAnimationFrame(animationFrame);
     });
 
     roster.addEventListener('mouseleave', () => {
@@ -345,24 +355,43 @@
         e.preventDefault();
         isDragging = true; 
         const x = e.pageX - roster.offsetLeft;
-        const walk = (x - startX) * 1.5; 
+        const walk = (x - startX) * 2; 
         roster.scrollLeft = scrollLeft - walk;
+        
+        // Keep target updated while dragging
+        targetScroll = roster.scrollLeft;
+        currentScroll = roster.scrollLeft;
     });
 
+    // Capture the wheel for buttery smooth gliding
     roster.addEventListener('wheel', (evt) => {
-        const atLeftEdge = roster.scrollLeft <= 0;
-        const atRightEdge = roster.scrollLeft + roster.clientWidth >= roster.scrollWidth - 1;
-
-        if (evt.deltaY > 0 && !atRightEdge) {
-            evt.preventDefault();
-            roster.scrollBy({ left: evt.deltaY * 2.5, behavior: 'smooth' });
-        } 
-        else if (evt.deltaY < 0 && !atLeftEdge) {
-            evt.preventDefault();
-            roster.scrollBy({ left: evt.deltaY * 2.5, behavior: 'smooth' });
-        }
+        evt.preventDefault();
+        
+        // Multiply by 2 for satisfying wheel distance
+        targetScroll += evt.deltaY * 2;
+        
+        // Stop it from scrolling past the edges
+        const maxScroll = roster.scrollWidth - roster.clientWidth;
+        targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+        
+        cancelAnimationFrame(animationFrame);
+        animateScroll();
     });
 
+    function animateScroll() {
+        // The magic formula for smooth sliding (Lerp)
+        currentScroll += (targetScroll - currentScroll) * ease;
+        roster.scrollLeft = currentScroll;
+        
+        // Keep animating until it reaches the target perfectly
+        if (Math.abs(targetScroll - currentScroll) > 0.5) {
+            animationFrame = requestAnimationFrame(animateScroll);
+        } else {
+            roster.scrollLeft = targetScroll; // Snap to the exact pixel at the end
+        }
+    }
+
+    // --- MODAL POPUP LOGIC ---
     const cards = document.querySelectorAll('.logo-card');
     const modal = document.getElementById('principalModal');
     const closeModalBtn = document.getElementById('closeModal');
