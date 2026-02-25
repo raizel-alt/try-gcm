@@ -71,6 +71,12 @@ nav {
     font-size: 0.85rem;
     text-transform: uppercase;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* ✅ GOLD HOVER FOR ALL NAV LINKS */
+.nav-item a:hover {
+    color: var(--gold);
 }
 
 .nav-item.active a {
