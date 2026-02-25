@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Clickable Menu with Summaries</title>
+<title>Company Summaries Popup</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -194,8 +194,8 @@
     popupBg.classList.remove('active');
   });
 
-  // Close popup when clicking outside the popup content
-  popupBg.addEventListener('click', (e) => {
+  // Close popup when clicking outside popup content
+  popupBg.addEventListener('click', e => {
     if (e.target === popupBg) {
       popupBg.classList.remove('active');
     }
