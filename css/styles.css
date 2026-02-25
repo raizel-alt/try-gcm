@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCM | Contact Us</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --dark-green: #2E8B57;
+    --medium-green: #1f5e46;
+    --light-green: #e9f2ec;
+    --gold: #c5a04d;
+    --soft-bg: #ffffff;
+    --text-dark: #333333;
+    --border-color: #cccccc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--soft-bg);
+    color: var(--text-dark);
+}
+
+/* Navigation */
+.top-nav {
+    background: var(--dark-green);
+    color: #ffffff;
+    padding: 8px 8%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+}
+
+header {
+    background: #ffffff;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-logo { max-height: 65px; }
+
+nav { display: flex; }
+.nav-item { margin-left: 35px; }
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-item a:hover, .nav-item.active a { color: var(--gold); }
+
+/* Main Contact Layout */
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-green);
+    margin: 50px 0 20px;
+    text-transform: uppercase;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5% 80px;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* Left Side: Form (Like Ginebra Site) */
+.form-section {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.form-group label span {
+    color: red; /* The red asterisk */
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: #fdfdfd;
+    transition: border-color 0.3s ease;
+    outline: none;
+    resize: vertical;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--dark-green);
+}
+
+.submit-btn {
+    background: var(--dark-green);
+    color: #ffffff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--medium-green);
+}
+
+.success-message {
+    display: none;
+    background: var(--light-green);
+    color: var(--dark-green);
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    border-left: 4px solid var(--dark-green);
+}
+
+/* Right Side: Contact Details (Like Ginebra Site) */
+.details-section {
+    flex: 1;
+    min-width: 300px;
+    padding-top: 10px;
+}
+
+.details-block {
+    margin-bottom: 40px;
+}
+
+.details-block h3 {
+    font-size: 1.2rem;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.details-block p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555555;
+}
+
+.details-block strong {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.details-block a {
+    color: var(--dark-green);
+    text-decoration: none;
+}
+
+.details-block a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="top-nav">
+    <div>PH: +63 917 123 4567 | info@gcmarketing.com.ph</div>
+    <div>MON - FRI: 9:00 AM - 6:00 PM</div>
+</div>
+
+<header>
+    <a href="index.html">
+        <img src="GCMLogo.png" alt="GCM Logo" class="site-logo">
+    </a>
+    <nav>
+        <div class="nav-item"><a href="index.html">Home</a></div>
+        <div class="nav-item"><a href="about.html">About Us</a></div>
+        <div class="nav-item"><a href="services.html">Services</a></div>
+        <div class="nav-item active"><a href="contact.html">Contact Us</a></div>
+    </nav>
+</header>
+
+<h1 class="page-title">Contact Us</h1>
+
+<section class="contact-container">
+    
+    <div class="form-section">
+        <div id="successMessage" class="success-message">
+            Thank you! Your message has been sent successfully.
+        </div>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label>Name <span>*</span></label>
+                <input type="text" id="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Birthday <span>*</span></label>
+                <input type="date" id="birthday" required>
+            </div>
+
+            <div class="form-group">
+                <label>Contact Number <span>*</span></label>
+                <input type="tel" id="contactNum" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email <span>*</span></label>
+                <input type="email" id="emailAdd" required>
+            </div>
+            
+            <div class="form-group">
+                <label>City/Municipality <span>*</span></label>
+                <input type="text" id="city" required>
+            </div>
+
+            <div class="form-group">
+                <label>Country <span>*</span></label>
+                <input type="text" id="country" required>
+            </div>
+
+            <div class="form-group">
+                <label>Message <span>*</span></label>
+                <textarea id="messageBox" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="sendBtn">Submit</button>
+        </form>
+    </div>
+
+    <div class="details-section">
+        
+        <div class="details-block">
+            <h3>Corporate Head Office</h3>
+            <p>
+                <strong>GCM Trade Essentials</strong><br>
+               NEO Central Warehouse, Zone 9 Cugman Highway<br>
+                Cagayan de Oro City, Philippines<br>
+                Telephone No.: (088) 856 1234
+            </p>
+        </div>
+
+        <div class="details-block">
+            <h3>Customer Care</h3>
+            <p>
+                For inquiries, orders, and suggestions on our products and services, please write or call:<br><br>
+                <strong>GOLDEN CENTURY MARKETING</strong><br>
+                Telephone No.: +63 917 123 4567<br>
+                Email: <a href="mailto:info@gcmarketing.com.ph">info@gcmarketing.com.ph</a><br>
+                Sales: <a href="mailto:sales@gcmarketing.com.ph">sales@gcmarketing.com.ph</a>
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+    const form = document.getElementById('contactForm');
+    const sendBtn = document.getElementById('sendBtn');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        sendBtn.textContent = "Sending...";
+        sendBtn.style.opacity = "0.7";
+        sendBtn.style.pointerEvents = "none";
+
+        setTimeout(() => {
+            successMessage.style.display = "block";
+            form.reset();
+            sendBtn.textContent = "Submit";
+            sendBtn.style.opacity = "1";
+            sendBtn.style.pointerEvents = "auto";
+
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 4000);
+
+        }, 1500);
+    });
+</script>
+
+</body>
+</html>
