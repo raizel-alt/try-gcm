@@ -5,40 +5,167 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Company Summaries</title>
 <style>
-body { font-family: Arial,sans-serif; margin:40px; background:#fff; }
-:root { --gold:#F4B942; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background: #fff;
+}
 
-.menu { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.menu-item { width:100px; height:100px; background-size:contain; background-repeat:no-repeat; background-position:center; cursor:pointer; border-radius:8px; filter:grayscale(100%); transition:filter 0.3s, transform 0.3s; display:flex; align-items:flex-end; justify-content:center; padding-bottom:8px; text-align:center; font-weight:700; font-size:0.85rem; text-shadow:0 0 4px rgba(255,255,255,0.9); }
-.menu-item:hover { filter:none; transform:scale(1.15); color:var(--gold); }
-.menu-item span { background:rgba(255,255,255,0.85); padding:3px 6px; border-radius:4px; width:90%; }
+:root {
+  --gold: #F4B942;
+}
 
-.popup-bg { position:fixed; inset:0; background:rgba(0,0,0,0.5); display:none; justify-content:center; align-items:center; z-index:9999; }
-.popup-bg.active { display:flex; }
-.popup { background:white; padding:25px 30px; max-width:400px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3); position:relative; text-align:center; }
-.popup h2 { margin-top:0; color:var(--gold); }
-.popup p { margin:15px 0 0 0; color:#333; font-size:1rem; line-height:1.4; }
-.popup-close { position:absolute; top:10px; right:15px; font-size:22px; font-weight:bold; color:#666; cursor:pointer; transition:color 0.2s; }
-.popup-close:hover { color:var(--gold); }
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.menu-item {
+  width: 120px;
+  height: 140px;
+  cursor: pointer;
+  border-radius: 8px;
+  filter: grayscale(100%);
+  transition: filter 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.menu-item:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+.menu-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.menu-item span {
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.popup-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-bg.active {
+  display: flex;
+}
+
+.popup {
+  background: white;
+  padding: 25px 30px;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: center;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: var(--gold);
+}
+
+.popup p {
+  margin: 15px 0 0 0;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.popup-close:hover {
+  color: var(--gold);
+}
 </style>
 </head>
 <body>
 
-<div class="card">
-  <div class="card-item" style="background-image:url('3m.png');" data-name="3M" data-summary="3M is a global innovation company known for safety, healthcare, and consumer products."><span>3M</span></div>
-  <div class="card-item" style="background-image:url('bayer.png');" data-name="Bayer" data-summary="Bayer specializes in pharmaceuticals, consumer health, and agriculture."><span>Bayer</span></div>
-  <div class="card-item" style="background-image:url('history.png');" data-name="History" data-summary="Our company history and milestones shaping our legacy."><span>History</span></div>
-  <div class="card-item" style="background-image:url('jsu.png');" data-name="JSU" data-summary="JSU is recognized for quality and innovation in its products."><span>JSU</span></div>
-  <div class="card-item" style="background-image:url('lamoiyan.png');" data-name="Lamoiyan" data-summary="Lamoiyan provides trusted personal care and household products."><span>Lamoiyan</span></div>
-  <div class="card-item" style="background-image:url('mandv.png');" data-name="Mission & Vision" data-summary="Our mission and vision guide sustainable growth and social responsibility."><span>Mission & Vision</span></div>
-  <div class="card-item" style="background-image:url('mars.png');" data-name="Mars" data-summary="Mars manufactures confectionery, pet food, and other food products globally."><span>Mars</span></div>
-  <div class="card-item" style="background-image:url('maunlad.png');" data-name="Maunlad" data-summary="Maunlad focuses on community development and local enterprise support."><span>Maunlad</span></div>
-  <div class="card-item" style="background-image:url('ncm.png');" data-name="NCM" data-summary="NCM provides innovative technology and manufacturing solutions."><span>NCM</span></div>
-  <div class="card-item" style="background-image:url('principals.png');" data-name="Principals" data-summary="Our principals are committed to excellence and integrity."><span>Principals</span></div>
-  <div class="card-item" style="background-image:url('reckitt.png');" data-name="Reckitt" data-summary="Reckitt develops trusted health, hygiene, and nutrition products."><span>Reckitt</span></div>
-  <div class="card-item" style="background-image:url('regal.png');" data-name="Regal" data-summary="Regal is known for premium quality food and beverage products."><span>Regal</span></div>
-  <div class="card-item" style="background-image:url('regent.png');" data-name="Regent" data-summary="Regent delivers excellence in household and personal care products."><span>Regent</span></div>
-  <div class="card-item" style="background-image:url('template.png');" data-name="Template" data-summary="Template is our versatile brand for customizable solutions and services."><span>Template</span></div>
+<div class="menu">
+  <div class="menu-item" data-name="3M" data-summary="3M is a global innovation company known for safety, healthcare, and consumer products.">
+    <img src="3m.png" alt="3M">
+    <span>3M</span>
+  </div>
+  <div class="menu-item" data-name="Bayer" data-summary="Bayer specializes in pharmaceuticals, consumer health, and agriculture.">
+    <img src="bayer.png" alt="Bayer">
+    <span>Bayer</span>
+  </div>
+  <div class="menu-item" data-name="History" data-summary="Our company history and milestones shaping our legacy.">
+    <img src="history.png" alt="History">
+    <span>History</span>
+  </div>
+  <div class="menu-item" data-name="JSU" data-summary="JSU is recognized for quality and innovation in its products.">
+    <img src="jsu.png" alt="JSU">
+    <span>JSU</span>
+  </div>
+  <div class="menu-item" data-name="Lamoiyan" data-summary="Lamoiyan provides trusted personal care and household products.">
+    <img src="lamoiyan.png" alt="Lamoiyan">
+    <span>Lamoiyan</span>
+  </div>
+  <div class="menu-item" data-name="Mission & Vision" data-summary="Our mission and vision guide sustainable growth and social responsibility.">
+    <img src="mandv.png" alt="Mission & Vision">
+    <span>Mission & Vision</span>
+  </div>
+  <div class="menu-item" data-name="Mars" data-summary="Mars manufactures confectionery, pet food, and other food products globally.">
+    <img src="mars.png" alt="Mars">
+    <span>Mars</span>
+  </div>
+  <div class="menu-item" data-name="Maunlad" data-summary="Maunlad focuses on community development and local enterprise support.">
+    <img src="maunlad.png" alt="Maunlad">
+    <span>Maunlad</span>
+  </div>
+  <div class="menu-item" data-name="NCM" data-summary="NCM provides innovative technology and manufacturing solutions.">
+    <img src="ncm.png" alt="NCM">
+    <span>NCM</span>
+  </div>
+  <div class="menu-item" data-name="Principals" data-summary="Our principals are committed to excellence and integrity.">
+    <img src="principals.png" alt="Principals">
+    <span>Principals</span>
+  </div>
+  <div class="menu-item" data-name="Reckitt" data-summary="Reckitt develops trusted health, hygiene, and nutrition products.">
+    <img src="reckitt.png" alt="Reckitt">
+    <span>Reckitt</span>
+  </div>
+  <div class="menu-item" data-name="Regal" data-summary="Regal is known for premium quality food and beverage products.">
+    <img src="regal.png" alt="Regal">
+    <span>Regal</span>
+  </div>
+  <div class="menu-item" data-name="Regent" data-summary="Regent delivers excellence in household and personal care products.">
+    <img src="regent.png" alt="Regent">
+    <span>Regent</span>
+  </div>
+  <div class="menu-item" data-name="Template" data-summary="Template is our versatile brand for customizable solutions and services.">
+    <img src="template.png" alt="Template">
+    <span>Template</span>
+  </div>
 </div>
 
 <div class="popup-bg" id="popup">
