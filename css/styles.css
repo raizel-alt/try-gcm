@@ -194,4 +194,17 @@ nav { display: flex; }
     }
 }
 
-</html>
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-item a:hover, 
+.nav-item.active a { 
+    color: var(--gold); 
+}
