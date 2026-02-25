@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners</title>
+<style>
+  :root {
+    --dark-green: #2E8B57;
+    --medium-green: #1f5e46;
+    --light-green: #e9f2ec;
+    --gold: #F4B942; /* highlight */
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--light-green);
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .product-card {
+    position: relative;
+    width: 250px;
+    height: 180px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  }
+
+  .product-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  .product-card:hover::after {
+    opacity: 0.15;
+  }
+
+  .product-card h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  }
+
+  .product-card .view-more {
+    position: relative;
+    z-index: 1;
+    margin-top: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+  }
+
+  .product-card:hover .view-more {
+    color: var(--medium-green);
+  }
+
+  .product-card .view-more-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover .view-more-icon {
+    transform: translateX(5px);
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Cards -->
+
+<a href="history.html" class="product-card" style="background-image: url('history.png');">
+  <div>
+    <h2>Our History</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="mandv.html" class="product-card" style="background-image: url('mandv.png');">
+  <div>
+    <h2>Mission & Vision</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="principals.html" class="product-card" style="background-image: url('jsu.png');">
+  <div>
+    <h2>Our Principals</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<!-- Other product cards linking to blank # -->
+<a href="#" class="product-card" style="background-image: url('3m.png');">
+  <div>
+    <h2>3M</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('bayer.png');">
+  <div>
+    <h2>Bayer</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('lamoiyan.png');">
+  <div>
+    <h2>Lamoiyan</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('mars.png');">
+  <div>
+    <h2>Mars</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('maunlad.png');">
+  <div>
+    <h2>Maunlad</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('ncm.png');">
+  <div>
+    <h2>NCM</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('reckitt.png');">
+  <div>
+    <h2>Reckitt</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('regal.png');">
+  <div>
+    <h2>Regal</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('regent.png');">
+  <div>
+    <h2>Regent</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+<a href="#" class="product-card" style="background-image: url('template.png');">
+  <div>
+    <h2>Template</h2>
+    <div class="view-more">View More <div class="view-more-icon">&rarr;</div></div>
+  </div>
+</a>
+
+</body>
+</html>
