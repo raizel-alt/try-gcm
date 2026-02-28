@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Careers</title>
+    <style>
+        :root { --primary: #2563eb; --dark: #1e293b; --light: #f8fafc; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--light); margin: 0; padding: 20px; }
+        header { text-align: center; margin-bottom: 40px; }
+        
+        /* Admin Section */
+        #admin-auth { text-align: right; margin-bottom: 10px; }
+        #admin-panel { 
+            display: none; background: white; padding: 20px; 
+            border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 30px; 
+        }
+        
+        /* Form Styling */
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        button.secondary { background: #64748b; }
+
+        /* Job Cards */
+        #job-list { display: grid; gap: 20px; max-width: 800px; margin: 0 auto; }
+        .job-card { background: white; padding: 20px; border-radius: 8px; border-left: 5px solid var(--primary); box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: relative; }
+        .delete-btn { position: absolute; top: 10px; right: 10px; color: red; cursor: pointer; display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="admin-auth">
+        <button onclick="checkAdmin()" class="secondary">Admin Login</button>
+    </div>
+
+    <header>
+        <h1>Join Our Team</h1>
+        <p>Explore current openings and build the future with us.</p>
+    </header>
+
+    <section id="admin-panel">
+        <h3>Create New Job Posting</h3>
+        <input type="text" id="job-title" placeholder="Job Title (e.g. Senior Developer)">
+        <input type="text" id="job-location" placeholder="Location (e.g. Remote, NY)">
+        <textarea id="job-desc" rows="4" placeholder="Job Description..."></textarea>
+        <button onclick="addJob()">Post Job</button>
+        <button onclick="logoutAdmin()" class="secondary">Logout</button>
+    </section>
+
+    <main id="job-list">
+        </main>
+
+    <script>
+        let isAdmin = false;
+
+        // 1. Initial Load
+        window.onload = () => {
+            renderJobs();
+        };
+
+        // 2. Simple Admin Check
+        function checkAdmin() {
+            const pass = prompt("Enter Admin Password:");
+            if (pass === "admin123") { // In a real app, this is handled by the server!
+                isAdmin = true;
+                document.getElementById('admin-panel').style.display = 'block';
+                renderJobs(); // Re-render to show delete buttons
+            } else {
+                alert("Access Denied");
+            }
+        }
+
+        function logoutAdmin() {
+            isAdmin = false;
+            document.getElementById('admin-panel').style.display = 'none';
+            renderJobs();
+        }
+
+        // 3. Add Job to LocalStorage
+        function addJob() {
+            const title = document.getElementById('job-title').value;
+            const location = document.getElementById('job-location').value;
+            const desc = document.getElementById('job-desc').value;
+
+            if(!title || !location) return alert("Please fill in fields");
+
+            const jobs = JSON.parse(localStorage.getItem('jobs') || '[]');
+            jobs.push({ id: Date.now(), title, location, desc });
+            localStorage.setItem('jobs', JSON.stringify(jobs));
+
+            // Clear form and update UI
+            document.getElementById('job-title').value = '';
+            document.getElementById('job-desc').value = '';
+            renderJobs();
+        }
+
+        // 4. Delete Job
+        function deleteJob(id) {
+            let jobs = JSON.parse(localStorage.getItem('jobs'));
+            jobs = jobs.filter(j => j.id !== id);
+            localStorage.setItem('jobs', JSON.stringify(jobs));
+            renderJobs();
+        }
+
+        // 5. Render Jobs to Page
+        function renderJobs() {
+            const jobList = document.getElementById('job-list');
+            const jobs = JSON.parse(localStorage.getItem('jobs') || '[]');
+            
+            jobList.innerHTML = jobs.length ? '' : '<p style="text-align:center">No current openings.</p>';
+
+            jobs.forEach(job => {
+                const card = document.createElement('div');
+                card.className = 'job-card';
+                card.innerHTML = `
+                    <span class="delete-btn" style="display: ${isAdmin ? 'block' : 'none'}" onclick="deleteJob(${job.id})">✖ Delete</span>
+                    <h2>${job.title}</h2>
+                    <small>📍 ${job.location}</small>
+                    <p>${job.desc}</p>
+                    <button>Apply Now</button>
+                `;
+                jobList.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
